@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yassine Samari — Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    .activity-photo {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.activity-photo img {
+  width: 250px; /* tu peux ajuster */
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+    :root {
+      --primary: #4a6cf7;
+      --secondary: #7a58d1;
+      --bg-light: #f5f7ff;
+      --bg-card: #ffffff;
+      --text-main: #1d1d1f;
+      --text-muted: #5c5c61;
+      --shadow: 0 6px 20px rgba(50, 70, 200, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 50px;
+      margin: 0;
+      color: var(--primary);
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* PHOTO */
+    .photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 25px auto 10px;
+      background: url('samari.pnj.jpg') center/cover no-repeat; /* 👈 Replace with your image file name */
+      border: 5px solid rgba(74,108,247,0.2);
+      box-shadow: 0 6px 18px rgba(74,108,247,0.25);
+    }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: white;
+      box-shadow: var(--shadow);
+      border-radius: 14px;
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto 0;
+      overflow: hidden;
+    }
+
+    .tab-label {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      color: var(--text-muted);
+      background: white;
+      border-bottom: 3px solid transparent;
+    }
+
+    input[type="radio"] { display: none; }
+
+    input[type="radio"]:checked + label {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+      background: #f0f3ff;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 40px 30px;
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+      border-radius: 14px;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    input[type="radio"]:checked + label + .tab-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sub-tabs {
+      margin-top: 20px;
+      border-top: 1px solid #e1e4ff;
+      padding-top: 20px;
+    }
+
+    .sub-tabs h3 {
+      color: var(--secondary);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .sub-tabs p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 { font-size: 36px; }
+      .tab-label { font-size: 14px; padding: 12px; }
+      .tab-content { padding: 30px 20px; }
+    }
+
+    /* CV SECTIONS */
+    .cv-section {
+      margin-top: 20px;
+      background: #f9faff;
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .cv-section h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yassine Samari</h1>
+    <div class="photo"></div> <!-- 👈 Your photo appears here -->
+    <p>1st Year Student · Digital Sciences at ENSEEIHT</p>
+  </header>
+
+  <div class="tabs">
+    <!-- HOME -->
+     <div class="tabs">
+    <input type="radio" name="tab" id="tab1" checked>
+    <label for="tab1" class="tab-label">Welcome</label>
+    <div class="tab-content">
+      <h2>Welcome 👋</h2>
+      <p>Hello! I’m <strong>Yassine Samari</strong>, a first-year student at ENSEEIHT in the Digital Sciences program.  
+      This portfolio showcases my journey, projects, and experiences as an engineering student passionate about technology, innovation, and international learning.</p>
+    </div>
+
+    <!-- ENGINEERING COURSES -->
+    <input type="radio" name="tab" id="tab2">
+    <label for="tab2" class="tab-label">Engineering Courses</label>
+    <div class="tab-content">
+      <h2>Engineering Courses</h2>
+      <p>This section describes the courses and projects completed each semester at ENSEEIHT.</p>
+
+      <div class="sub-tabs">
+        <h3>Semester 1</h3>
+        <p>During my first semester, I studied the core foundations of digital sciences, including:</p>
+        <ul>
+          <li>Soft and Human Skills (English, Deutsch, Sport, Careers and Management)</li>
+          <li>Introduction to programming (Python, C, Ada)</li>
+          <li>Integration and Probabilities</li>
+          <li>Physics for engineers</li>
+          <li>Communication and project teamwork</li>
+        </ul>
+        <p>We also worked on small programming and design projects, applying theoretical knowledge to real-life problems.  
+        (This section will be updated after each semester to include new courses and reflections.)</p>
+      </div>
+    </div>
+
+    <!-- MOBILITY -->
+    <input type="radio" name="tab" id="tab3">
+    <label for="tab3" class="tab-label">International Mobility</label>
+    <div class="tab-content">
+      <h2>International Mobility</h2>
+      <p>I aim to participate in an international mobility program during my engineering studies to strengthen my global perspective and intercultural skills.</p>
+    </div>
+
+    <!-- CIVIC ENGAGEMENT -->
+    <input type="radio" name="tab" id="tab4">
+    <label for="tab4" class="tab-label">Sustainability & Civic Engagement</label>
+    <div class="tab-content">
+      <h2>Sustainability & Civic Engagement</h2>
+      <p>I plan to participate in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
+    </div>
+
+    <!-- SPORTS -->
+<!-- SPORTS -->
+<input type="radio" name="tab" id="tab5">
+<label for="tab5" class="tab-label">Sport & Other Activities</label>
+<div class="tab-content">
+  <h2>Sport & Other Activities</h2>
+  <p>Sports and hobbies are an essential part of my student life. They help me stay healthy, focused, and creative.  
+  Below are a few activities I regularly enjoy:</p>
+
+  <!-- FOOTBALL -->
+  <div class="sub-tabs">
+    <h3>⚽ Football</h3>
+    <p>I love playing football with friends and classmates. It’s a great way to stay active, improve teamwork, and release stress after classes.</p>
+    <div class="activity-photo">
+      <!-- 👇 Add your football photo here -->
+      <img src="football.jpeg" alt="Football activity" />
+    </div>
+  </div>
+
+  <!-- PING PONG -->
+  <div class="sub-tabs">
+    <h3>🏓 Ping Pong</h3>
+    <p>Ping Pong helps me improve focus, reflexes, and precision. I often play during breaks at school with classmates.</p>
+    <div class="activity-photo">
+      <!-- 👇 Add your ping pong photo here -->
+      <img src="ping pongg.jpeg" alt="Ping Pong activity" />
+    </div>
+  </div>
+
+  <!-- COOKING -->
+  <div class="sub-tabs">
+    <h3>🍳 Cooking</h3>
+    <p>Cooking is one of my favorite hobbies outside of studies. It allows me to be creative and share good moments with friends.</p>
+    <div class="activity-photo">
+      <!-- 👇 Add your cooking photo here -->
+      <img src="cooking.jpeg" alt="Cooking activity" />
+    </div>
+  </div>
+</div>
+
+
+    <!-- CAREER -->
+    <input type="radio" name="tab" id="tab6">
+    <label for="tab6" class="tab-label">Career Development</label>
+    <div class="tab-content">
+      <h2>Career Development</h2>
+      <p>My career goal is to become a digital systems engineer, contributing to innovation in technology, AI, or embedded systems.</p>
+
+      <div class="cv-section">
+        <h3>CV in French</h3>
+        <p>Version complète de mon CV en français — à télécharger ici :  
+        <a href="CV_Yassine_FR.pdf" target="_blank">Télécharger le CV Français</a></p>
+
+        <h3>CV in English</h3>
+        <p>Full English version of my CV — download here:  
+        <a href="CV_Yassine_EN.pdf" target="_blank">Download English CV</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>📞 +33 6 49 99 10 12 | 📧 yassine.samari@etu.toulouse-inp.fr | 🔗 
+      <a href="https://www.linkedin.com/in/yassine-samari-53b1b7387/" target="_blank">LinkedIn Profile</a>
+    </p>
+  </footer>
+
+</body>
+</html>
+
