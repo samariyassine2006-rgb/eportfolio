@@ -168,6 +168,74 @@
       color: var(--primary);
       margin-bottom: 10px;
     }
+        /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 15px;
+      margin-top: 50px;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+    }
+
+    footer a {
+      color: #ffdf70;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    /* VIDEO + ABOUT ME SECTION */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.video-container {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 480px;
+  height: 270px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.about-text {
+  flex: 1 1 350px;
+  background: #f9faff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.about-text h3 {
+  color: var(--primary);
+  font-family: "Space Grotesk", sans-serif;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
   </style>
 </head>
 <body>
@@ -179,14 +247,37 @@
 
   <div class="tabs">
     <!-- HOME -->
-     <div class="tabs">
-    <input type="radio" name="tab" id="tab1" checked>
-    <label for="tab1" class="tab-label">Welcome</label>
-    <div class="tab-content">
-      <h2>Welcome 👋</h2>
-      <p>Hello! I’m <strong>Yassine Samari</strong>, a first-year student at ENSEEIHT in the Digital Sciences program.  
-      This portfolio showcases my journey, projects, and experiences as an engineering student passionate about technology, innovation, and international learning.</p>
+<input type="radio" name="tab" id="tab1" checked>
+<label for="tab1" class="tab-label">Welcome</label>
+<div class="tab-content">
+
+  <h2>Welcome 👋</h2>
+  <p>Hello! I’m <strong>Yassine Samari</strong>, a first-year student at ENSEEIHT in the Digital Sciences program.  
+  This portfolio showcases my journey, projects, and experiences as an engineering student passionate about technology, innovation, and international learning.</p>
+
+  <div class="about-section">
+    <!-- 🎥 VIDEO -->
+    <div class="video-container">
+      <iframe 
+        src="https://youtube.com/shorts/JFoKOtOXlh8?si=fRJemuSgg7QmdKPC"
+        title="Yassine Samari – Presentation Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
+
+    <!-- 🧠 TEXT -->
+    <div class="about-text">
+      <h3>More About Me</h3>
+      <p>In this short video, I share my journey — from my early interests in technology and problem-solving,  
+      to my present studies in digital sciences at ENSEEIHT, and my future ambitions to innovate and contribute  
+      to the global tech community.  
+      I believe that engineering is not only about science but also about creativity, collaboration, and impact.</p>
+    </div>
+  </div>
+</div>
+
 
     <!-- ENGINEERING COURSES -->
     <input type="radio" name="tab" id="tab2">
@@ -202,8 +293,10 @@
           <li>Soft and Human Skills (English, Deutsch, Sport, Careers and Management)</li>
           <li>Introduction to programming (Python, C, Ada)</li>
           <li>Integration and Probabilities</li>
-          <li>Physics for engineers</li>
-          <li>Communication and project teamwork</li>
+          <li>Data Analysis</li>
+          <li>Modelisation</li>
+          <li>Statistics</li>
+          <li>Optimization</li>
         </ul>
         <p>We also worked on small programming and design projects, applying theoretical knowledge to real-life problems.  
         (This section will be updated after each semester to include new courses and reflections.)</p>
@@ -219,12 +312,26 @@
     </div>
 
     <!-- CIVIC ENGAGEMENT -->
-    <input type="radio" name="tab" id="tab4">
-    <label for="tab4" class="tab-label">Sustainability & Civic Engagement</label>
-    <div class="tab-content">
-      <h2>Sustainability & Civic Engagement</h2>
-      <p>I plan to participate in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
-    </div>
+<input type="radio" name="tab" id="tab4">
+<label for="tab4" class="tab-label">Sustainability & Civic Engagement</label>
+<div class="tab-content">
+  <h2>Sustainability & Civic Engagement</h2>
+  <p>I plan to participate in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
+
+  <div class="sub-tabs">
+    <h3>🎭 Integration Week — “King Kong” Theatre Play</h3>
+    <p>During the integration week, I attended the theatre play <strong>“King Kong”</strong>, which raised awareness about
+      <strong>sexual and sexist harassment</strong>.  
+      It was a powerful and emotional performance that highlighted the importance of respect, equality, and solidarity within our community.</p>
+  </div>
+
+  <div class="sub-tabs">
+    <h3>🔥 Event — “L’Hiver Sera Chaud” (07/10/2025)</h3>
+    <p>On <strong>October 7th, 2025</strong>, I attended the event <strong>“L’Hiver Sera Chaud”</strong>, which promotes social engagement, inclusion, and environmental awareness.
+      It was an inspiring opportunity to connect with motivated students and organizations working towards a fairer and more sustainable world.</p>
+  </div>
+</div>
+
 
     <!-- SPORTS -->
 <!-- SPORTS -->
