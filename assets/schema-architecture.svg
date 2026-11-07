@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 720 500" font-family="Arial, Helvetica, sans-serif">
+<rect width="720" height="500" fill="#FFFFFF"/>
+<style>
+.title{font-size:15px;font-weight:bold;fill:#042C53}
+.sub{font-size:11px;fill:#5F5E5A}
+.h{font-size:13px;font-weight:bold}
+.s{font-size:11px}
+.ln{stroke:#5F5E5A;stroke-width:1.5;fill:none}
+.box{fill:none;stroke:#888780;stroke-width:1;stroke-dasharray:5 4}
+.rt{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1}
+.cl{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1}
+.sv{fill:#E6F1FB;stroke:#185FA5;stroke-width:1}
+.lb{font-size:11px;fill:#444441}
+</style>
+
+<text class="title" x="360" y="18" text-anchor="middle">Infrastructure réseau multi-sites virtualisée</text>
+<text class="sub" x="360" y="33" text-anchor="middle">Docker · Containerlab · FRRouting (eBGP) · WireGuard · nftables · dnsmasq · Nginx</text>
+
+<!-- Conteneurs de sites -->
+<rect class="box" x="10" y="75" width="235" height="270" rx="12"/>
+<rect class="box" x="475" y="75" width="235" height="270" rx="12"/>
+<text class="h" x="24" y="95" fill="#2C2C2A">Site A</text>
+<text class="h" x="696" y="95" text-anchor="end" fill="#2C2C2A">Site B</text>
+
+<!-- Tunnel WireGuard -->
+<path d="M205 110 V62 H515 V110" fill="none" stroke="#534AB7" stroke-width="2" stroke-dasharray="6 4"/>
+<text class="s" x="360" y="54" text-anchor="middle" fill="#3C3489">Tunnel WireGuard 10.99.0.0/30 (extrémités 10.0.1.1 et 10.0.2.2)</text>
+
+<!-- Liens eBGP -->
+<line class="ln" x1="230" y1="146" x2="305" y2="146"/>
+<line class="ln" x1="415" y1="146" x2="490" y2="146"/>
+<text class="lb" x="267" y="138" text-anchor="middle">eBGP</text>
+<text class="lb" x="452" y="138" text-anchor="middle">eBGP</text>
+
+<!-- Routeurs -->
+<rect class="rt" x="25" y="110" width="205" height="72" rx="8"/>
+<text class="h" x="127" y="128" text-anchor="middle" fill="#085041">R1 · FRRouting</text>
+<text class="s" x="127" y="144" text-anchor="middle" fill="#0F6E56">AS 65001 · lo 10.255.0.1</text>
+<text class="s" x="127" y="158" text-anchor="middle" fill="#0F6E56">NAT · pare-feu nftables</text>
+<text class="s" x="127" y="172" text-anchor="middle" fill="#0F6E56">DHCP (dnsmasq)</text>
+
+<rect class="rt" x="305" y="110" width="110" height="72" rx="8"/>
+<text class="h" x="360" y="128" text-anchor="middle" fill="#085041">R-ISP</text>
+<text class="s" x="360" y="144" text-anchor="middle" fill="#0F6E56">AS 65000</text>
+<text class="s" x="360" y="158" text-anchor="middle" fill="#0F6E56">lo 10.255.0.3</text>
+<text class="s" x="360" y="172" text-anchor="middle" fill="#0F6E56">ISP simulé</text>
+
+<rect class="rt" x="490" y="110" width="205" height="72" rx="8"/>
+<text class="h" x="592" y="128" text-anchor="middle" fill="#085041">R2 · FRRouting</text>
+<text class="s" x="592" y="144" text-anchor="middle" fill="#0F6E56">AS 65002 · lo 10.255.0.2</text>
+<text class="s" x="592" y="158" text-anchor="middle" fill="#0F6E56">NAT · pare-feu nftables</text>
+<text class="s" x="592" y="172" text-anchor="middle" fill="#0F6E56">DHCP (dnsmasq)</text>
+
+<text class="lb" x="360" y="212" text-anchor="middle">Les LAN des sites ne sont</text>
+<text class="lb" x="360" y="226" text-anchor="middle">jamais annoncés à l'ISP</text>
+
+<!-- Liens routeurs -> réseaux -->
+<line class="ln" x1="70" y1="182" x2="70" y2="245"/>
+<line class="ln" x1="185" y1="182" x2="185" y2="245"/>
+<line class="ln" x1="535" y1="182" x2="535" y2="245"/>
+<line class="ln" x1="650" y1="182" x2="650" y2="245"/>
+<text class="lb" x="76" y="218">eth2</text>
+<text class="lb" x="191" y="218">eth3</text>
+<text class="lb" x="541" y="218">eth2</text>
+<text class="lb" x="656" y="218">eth3</text>
+
+<!-- Site A : clients et serveurs -->
+<rect class="cl" x="20" y="245" width="100" height="80" rx="8"/>
+<text class="h" x="70" y="263" text-anchor="middle" fill="#2C2C2A">Clients</text>
+<text class="s" x="70" y="279" text-anchor="middle" fill="#5F5E5A">10.1.10.0/24</text>
+<text class="s" x="70" y="295" text-anchor="middle" fill="#5F5E5A">PC1 (DHCP)</text>
+<text class="s" x="70" y="311" text-anchor="middle" fill="#5F5E5A">.100 à .199</text>
+
+<rect class="sv" x="135" y="245" width="100" height="80" rx="8"/>
+<text class="h" x="185" y="263" text-anchor="middle" fill="#0C447C">Serveurs</text>
+<text class="s" x="185" y="279" text-anchor="middle" fill="#185FA5">10.1.20.0/24</text>
+<text class="s" x="185" y="295" text-anchor="middle" fill="#185FA5">DNS dnsmasq</text>
+<text class="s" x="185" y="311" text-anchor="middle" fill="#185FA5">10.1.20.10</text>
+
+<!-- Site B : clients et serveurs -->
+<rect class="cl" x="485" y="245" width="100" height="80" rx="8"/>
+<text class="h" x="535" y="263" text-anchor="middle" fill="#2C2C2A">Clients</text>
+<text class="s" x="535" y="279" text-anchor="middle" fill="#5F5E5A">10.2.10.0/24</text>
+<text class="s" x="535" y="295" text-anchor="middle" fill="#5F5E5A">PC2 (DHCP)</text>
+<text class="s" x="535" y="311" text-anchor="middle" fill="#5F5E5A">.100 à .199</text>
+
+<rect class="sv" x="600" y="245" width="100" height="80" rx="8"/>
+<text class="h" x="650" y="263" text-anchor="middle" fill="#0C447C">Serveurs</text>
+<text class="s" x="650" y="279" text-anchor="middle" fill="#185FA5">10.2.20.0/24</text>
+<text class="s" x="650" y="295" text-anchor="middle" fill="#185FA5">Web Nginx</text>
+<text class="s" x="650" y="311" text-anchor="middle" fill="#185FA5">10.2.20.10</text>
+
+<!-- Légende et adressage -->
+<rect class="rt" x="20" y="365" width="14" height="14" rx="3"/>
+<text class="lb" x="40" y="376">Routeur (conteneur)</text>
+<rect class="cl" x="170" y="365" width="14" height="14" rx="3"/>
+<text class="lb" x="190" y="376">Clients</text>
+<rect class="sv" x="250" y="365" width="14" height="14" rx="3"/>
+<text class="lb" x="270" y="376">Serveurs</text>
+<line x1="350" y1="372" x2="380" y2="372" stroke="#534AB7" stroke-width="2" stroke-dasharray="6 4"/>
+<text class="lb" x="388" y="376">VPN WireGuard</text>
+<line x1="500" y1="372" x2="530" y2="372" class="ln"/>
+<text class="lb" x="538" y="376">Lien routé</text>
+
+<text class="lb" x="20" y="405">Liens : R1 - ISP 10.0.1.0/30 (R1 .1, ISP .2) · ISP - R2 10.0.2.0/30 (ISP .1, R2 .2) · tunnel 10.99.0.0/30 (R1 .1, R2 .2)</text>
+<text class="lb" x="20" y="423">Sécurité : nftables en refus par défaut sur R1 et R2 · NAT en sortie eth1 uniquement, sans traduction entre sites</text>
+<text class="lb" x="20" y="441">Services : DHCP sur chaque routeur (DNS annoncé : 10.1.20.10) · web.projet.local résolu en 10.2.20.10</text>
+<text class="lb" x="20" y="459">Routage : eBGP R1/R2 avec l'ISP (seuls les /30 de liaison sont annoncés) · routes inter-sites 10.x.0.0/16 via wg0</text>
+</svg>

@@ -1,444 +1,547 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Yassine Samari — Portfolio</title>
+  <meta name="description" content="E-portfolio of Yassine Samari, second-year engineering student at ENSEEIHT (Digital Sciences, Systems and Networks Architecture track).">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    .activity-photo {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.activity-photo img {
-  width: 250px; /* tu peux ajuster */
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.activity-photo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-
     :root {
-      --primary: #4a6cf7;
-      --secondary: #7a58d1;
-      --bg-light: #f5f7ff;
-      --bg-card: #ffffff;
-      --text-main: #1d1d1f;
-      --text-muted: #5c5c61;
-      --shadow: 0 6px 20px rgba(50, 70, 200, 0.12);
+      --paper: #f4f6fb;
+      --surface: #ffffff;
+      --ink: #17233d;
+      --muted: #525d76;
+      --rule: #d8deec;
+      --cobalt: #2c4fd6;
+      --cobalt-deep: #2340b3;
+      --signal: #f2b24c;
+      --signal-soft: #fdeccb;
+      --signal-ink: #6b4200;
+      --radius: 8px;
+      --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-head: "Bricolage Grotesque", "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     }
 
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-padding-top: 76px; }
 
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg-light);
-      color: var(--text-main);
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 20px;
-    }
-
-    header h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 50px;
-      margin: 0;
-      color: var(--primary);
-    }
-
-    header p {
-      color: var(--text-muted);
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    /* PHOTO */
-    .photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      margin: 25px auto 10px;
-      background: url('samari.pnj.jpg') center/cover no-repeat; /* 👈 Replace with your image file name */
-      border: 5px solid rgba(74,108,247,0.2);
-      box-shadow: 0 6px 18px rgba(74,108,247,0.25);
-    }
-
-    /* TABS */
-    .tabs {
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background: white;
-      box-shadow: var(--shadow);
-      border-radius: 14px;
-      width: 90%;
-      max-width: 1100px;
-      margin: 30px auto 0;
-      overflow: hidden;
+      flex-direction: column;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 1rem/1.6 var(--font-body);
     }
 
-    .tab-label {
-      flex: 1;
-      padding: 16px;
-      text-align: center;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      color: var(--text-muted);
-      background: white;
-      border-bottom: 3px solid transparent;
+    .wrap { width: min(1080px, 100% - 48px); margin-inline: auto; }
+    p { margin: 0 0 1em; max-width: 68ch; }
+    a { color: var(--cobalt); text-underline-offset: 3px; }
+    a:hover { color: var(--cobalt-deep); }
+    :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
+
+    .skip {
+      position: absolute; left: 12px; top: -60px; z-index: 50;
+      background: var(--ink); color: #fff; padding: 10px 16px; border-radius: var(--radius);
+    }
+    .skip:focus { top: 12px; }
+
+    h1, h2, h3, h4 { font-family: var(--font-head); font-optical-sizing: auto; margin: 0; }
+
+    /* ---------- Masthead ---------- */
+    .masthead { padding: 44px 0 30px; }
+    .masthead-inner { display: flex; align-items: center; gap: 28px; }
+    .portrait {
+      flex: none; position: relative; overflow: hidden;
+      width: 104px; height: 104px; border-radius: 50%;
+      border: 3px solid #fff; box-shadow: 0 0 0 1px var(--rule);
+    }
+    /* Tight head-and-shoulders crop of the original portrait photo */
+    .portrait img { position: absolute; width: 192.3%; max-width: none; height: auto; left: -41%; top: -59%; }
+    h1 {
+      font-size: clamp(2.25rem, 1.2rem + 3.6vw, 3.6rem);
+      font-weight: 700; line-height: 1.02; letter-spacing: -0.025em;
+    }
+    .role { margin: 10px 0 0; font-size: 1.1875rem; font-weight: 500; }
+    .track { margin: 2px 0 0; color: var(--muted); }
+
+    /* ---------- Tab bar (always on top, sticky) ---------- */
+    .tabbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255, 255, 255, 0.97);
+      border-block: 1px solid var(--rule);
+    }
+    .tablist { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .tablist::-webkit-scrollbar { display: none; }
+    [role="tab"] {
+      appearance: none; background: none; border: 0; border-bottom: 3px solid transparent;
+      margin-bottom: -1px; padding: 18px 12px 16px; cursor: pointer;
+      font: 500 0.9375rem/1 var(--font-body); color: var(--muted); white-space: nowrap;
+    }
+    [role="tab"]:hover { color: var(--ink); }
+    [role="tab"][aria-selected="true"] { color: var(--cobalt); border-bottom-color: var(--cobalt); font-weight: 600; }
+    [role="tab"]:focus-visible { outline-offset: -3px; }
+
+    /* ---------- Panels ---------- */
+    main { flex: 1; }
+    .panel { padding: 52px 0 80px; }
+    html:not(.js) .tabbar { display: none; }
+    html:not(.js) .panel { border-bottom: 1px solid var(--rule); }
+    [hidden] { display: none !important; }
+    .panel:not([hidden]) { animation: panel-in 0.22s ease-out; }
+    @keyframes panel-in { from { opacity: 0; } to { opacity: 1; } }
+
+    h2 { font-size: clamp(1.9rem, 1.2rem + 2vw, 2.6rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 18px; }
+    h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+    h4 { font-size: 1.375rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .lead { font-size: 1.1875rem; max-width: 62ch; }
+    .muted { color: var(--muted); }
+
+    /* Welcome */
+    .welcome-grid {
+      display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 48px; align-items: start; margin-top: 36px;
+    }
+    .video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius); background: #dfe5f4; }
+    .welcome-grid h3 { margin-bottom: 12px; }
+
+    /* Semester path */
+    .rail { list-style: none; margin: 44px 0 0; padding: 0; }
+    .stop { position: relative; padding: 0 0 52px 80px; }
+    .stop::before {
+      content: ""; position: absolute; left: 23px; top: 56px; bottom: 6px; width: 2px; background: var(--rule);
+    }
+    .stop:last-child { padding-bottom: 0; }
+    .stop:last-child::before { display: none; }
+    .node {
+      position: absolute; left: 0; top: 0; width: 48px; height: 48px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--surface);
+      border: 2px solid var(--cobalt); color: var(--cobalt);
+      font: 700 1rem/1 var(--font-head);
+    }
+    .stop.current .node { background: var(--signal); border-color: var(--signal); color: var(--ink); }
+    .stop-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; min-height: 48px; }
+    .stop-sub { margin: 0; color: var(--muted); flex-basis: 100%; }
+    .pill {
+      background: var(--signal-soft); color: var(--signal-ink);
+      font-size: 0.8125rem; font-weight: 600; padding: 3px 11px; border-radius: 99px;
+    }
+    .ue-list {
+      list-style: none; margin: 22px 0 0; padding: 0;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px 36px;
+    }
+    .ue-list > li { border-top: 1px solid var(--rule); padding-top: 12px; }
+    .ue-title { display: block; font-weight: 600; }
+    .ue-courses { list-style: none; margin: 4px 0 0; padding: 0; color: var(--muted); font-size: 0.9375rem; }
+    .stop-note { margin: 22px 0 0; font-size: 0.9375rem; }
+
+    /* Projects */
+    .projects { margin-top: 64px; padding-top: 8px; }
+    .project {
+      display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 18px 44px;
+      padding: 34px 0; border-top: 1px solid var(--rule);
+    }
+    .project:last-child { border-bottom: 1px solid var(--rule); }
+    .facts { margin: 0; font-size: 0.9375rem; }
+    .facts dt { margin-top: 14px; font-weight: 600; }
+    .facts dt:first-child { margin-top: 0; }
+    .facts dd { margin: 2px 0 0; color: var(--muted); }
+    .project figure { margin: 22px 0 0; }
+    .project figure img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius); }
+    .project figcaption { margin-top: 8px; font-size: 0.875rem; color: var(--muted); }
+    .project ul.did { margin: 0 0 1em; padding-left: 1.2em; max-width: 68ch; }
+    .project ul.did li { margin-bottom: 4px; }
+
+    /* Entries (mobility, civic engagement) */
+    .entries { margin-top: 34px; }
+    .entry { padding: 28px 0; border-top: 1px solid var(--rule); }
+    .entry:last-child { border-bottom: 1px solid var(--rule); }
+    .entry h3 { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; font-size: 1.375rem; }
+    .entry p:last-child { margin-bottom: 0; }
+    .flag { width: 34px; height: auto; border: 1px solid var(--rule); border-radius: 3px; }
+
+    /* Sport */
+    .sport { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 300px)); gap: 36px 32px; margin-top: 34px; }
+    .sport img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); margin-bottom: 14px; }
+    .sport h3 { font-size: 1.25rem; margin-bottom: 6px; }
+    .sport p { font-size: 0.9375rem; }
+
+    /* Career */
+    .downloads { list-style: none; margin: 30px 0 0; padding: 0; max-width: 680px; }
+    .downloads li { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding: 18px 0; border-top: 1px solid var(--rule); }
+    .downloads li:last-child { border-bottom: 1px solid var(--rule); }
+    .btn {
+      display: inline-block; background: var(--cobalt); color: #fff; text-decoration: none;
+      font-weight: 600; padding: 11px 20px; border-radius: var(--radius);
+    }
+    .btn:hover { background: var(--cobalt-deep); color: #fff; }
+
+    /* Footer */
+    .foot { border-top: 1px solid var(--rule); background: var(--surface); padding: 26px 0; }
+    .foot ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 36px; }
+    .foot li span { color: var(--muted); margin-right: 8px; }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 800px) {
+      .welcome-grid { grid-template-columns: 1fr; gap: 32px; }
+      .project { grid-template-columns: 1fr; gap: 14px; padding: 28px 0; }
+      .project .facts { order: 2; }
+      .masthead { padding: 32px 0 24px; }
+      .masthead-inner { gap: 18px; }
+      .portrait { width: 76px; height: 76px; }
+      .panel { padding: 36px 0 56px; }
+      .stop { padding-left: 64px; }
+      .node { width: 40px; height: 40px; font-size: 0.9375rem; }
+      .stop::before { left: 19px; top: 48px; }
+      .stop-head { min-height: 40px; }
     }
 
-    input[type="radio"] { display: none; }
-
-    input[type="radio"]:checked + label {
-      color: var(--primary);
-      border-bottom: 3px solid var(--primary);
-      background: #f0f3ff;
+    @media (prefers-reduced-motion: reduce) {
+      .panel:not([hidden]) { animation: none; }
+      html { scroll-behavior: auto; }
     }
-
-    .tab-content {
-      display: none;
-      padding: 40px 30px;
-      background: var(--bg-card);
-      box-shadow: var(--shadow);
-      border-radius: 14px;
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto 40px;
-      animation: fadeIn 0.4s ease;
-    }
-
-    input[type="radio"]:checked + label + .tab-content {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .sub-tabs {
-      margin-top: 20px;
-      border-top: 1px solid #e1e4ff;
-      padding-top: 20px;
-    }
-
-    .sub-tabs h3 {
-      color: var(--secondary);
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .sub-tabs p {
-      color: var(--text-muted);
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
-    @media (max-width: 700px) {
-      header h1 { font-size: 36px; }
-      .tab-label { font-size: 14px; padding: 12px; }
-      .tab-content { padding: 30px 20px; }
-    }
-
-    /* CV SECTIONS */
-    .cv-section {
-      margin-top: 20px;
-      background: #f9faff;
-      border-left: 4px solid var(--primary);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .cv-section h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-        /* FOOTER */
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 18px 10px;
-      font-size: 15px;
-      margin-top: 50px;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
-    }
-
-    footer a {
-      color: #ffdf70;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-    /* VIDEO + ABOUT ME SECTION */
-.about-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-
-.video-container {
-  flex: 1 1 400px;
-  display: flex;
-  justify-content: center;
-}
-
-.video-container iframe {
-  width: 100%;
-  max-width: 480px;
-  height: 270px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.about-text {
-  flex: 1 1 350px;
-  background: #f9faff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.about-text h3 {
-  color: var(--primary);
-  font-family: "Space Grotesk", sans-serif;
-  margin-bottom: 10px;
-}
-
-.about-text p {
-  color: var(--text-muted);
-  line-height: 1.6;
-  font-size: 15px;
-}
-
   </style>
 </head>
 <body>
-  <header>
-    <h1>Yassine Samari</h1>
-    <div class="photo"></div> <!-- 👈 Your photo appears here -->
-    <p>1st Year Student · Digital Sciences at ENSEEIHT</p>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="portrait"><img src="samari.pnj.jpg" alt="Portrait of Yassine Samari" width="1077" height="1417"></div>
+      <div>
+        <h1>Yassine Samari</h1>
+        <p class="role">Second-year engineering student at ENSEEIHT</p>
+        <p class="track">Digital Sciences, Systems and Networks Architecture track</p>
+      </div>
+    </div>
   </header>
 
-  <div class="tabs">
-    <!-- HOME -->
-<input type="radio" name="tab" id="tab1" checked>
-<label for="tab1" class="tab-label">Welcome</label>
-<div class="tab-content">
-
-  <h2>Welcome 👋</h2>
-  <p>Hello! I’m <strong>Yassine Samari</strong>, a first-year student at ENSEEIHT in the Digital Sciences program.  
-  This portfolio showcases my projects and experiences as an engineering student passionate about technology and international learning.</p>
-
-  <div class="about-section">
-    <!-- 🎥 VIDEO -->
-    <div class="video-container">
-      <iframe 
-        src="https://youtube.com/embed/Byrs0deHYHE?si=OYNvGa5cYdnXfym2"
-        title="Yassine Samari – Presentation Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+  <nav class="tabbar" aria-label="Portfolio sections">
+    <div class="wrap">
+      <div class="tablist" role="tablist">
+        <button type="button" role="tab" id="t-welcome" aria-controls="p-welcome" aria-selected="true">Welcome</button>
+        <button type="button" role="tab" id="t-courses" aria-controls="p-courses" aria-selected="false">Engineering Courses</button>
+        <button type="button" role="tab" id="t-mobility" aria-controls="p-mobility" aria-selected="false">International Mobility</button>
+        <button type="button" role="tab" id="t-civic" aria-controls="p-civic" aria-selected="false">Sustainability &amp; Civic Engagement</button>
+        <button type="button" role="tab" id="t-sport" aria-controls="p-sport" aria-selected="false">Sport &amp; Other Activities</button>
+        <button type="button" role="tab" id="t-career" aria-controls="p-career" aria-selected="false">Career Development</button>
+      </div>
     </div>
+  </nav>
 
-    <!-- 🧠 TEXT -->
-    <div class="about-text">
-      <h3>More About Me</h3>
-      <p>In this short video, I share my journey — from my early interests in technology and problem-solving,  
-      to my present studies in digital sciences at ENSEEIHT, and my future ambitions to innovate and contribute  
-      to the global tech community.  
-      I believe that engineering is not only about science but also about creativity, collaboration, and impact.</p>
-    </div>
-  </div>
-</div>
+  <main id="content">
+    <div class="wrap">
 
+      <!-- WELCOME -->
+      <section class="panel" role="tabpanel" id="p-welcome" aria-labelledby="t-welcome" tabindex="0">
+        <h2>Welcome</h2>
+        <p class="lead">Hello! I’m <strong>Yassine Samari</strong>, a second-year student at ENSEEIHT in the Digital Sciences department, on the Systems and Networks Architecture track. This portfolio showcases my projects and experiences as an engineering student passionate about technology and international learning.</p>
 
-    <!-- ENGINEERING COURSES -->
-    <input type="radio" name="tab" id="tab2">
-    <label for="tab2" class="tab-label">Engineering Courses</label>
-    <div class="tab-content">
-      <h2>Engineering Courses</h2>
-      <p>This section describes the courses and projects completed each semester at ENSEEIHT.</p>
+        <div class="welcome-grid">
+          <iframe class="video"
+            src="https://www.youtube.com/embed/Byrs0deHYHE"
+            title="Yassine Samari – presentation video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          <div>
+            <h3>More about me</h3>
+            <p class="muted">In this short video, I share my journey — from my early interests in technology and problem-solving, to my present studies in digital sciences at ENSEEIHT, and my future ambitions to innovate and contribute to the global tech community. I believe that engineering is not only about science but also about creativity, collaboration, and impact.</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="sub-tabs">
-        <h3>Semester 1</h3>
-        <p>During my first semester, I studied the core foundations of digital sciences, including:</p>
-        <ul>
-          <li>Soft and Human Skills (English, Deutsch, Sport, Careers and Management)</li>
-          <li>Introduction to programming (Python, C, Ada)</li>
-          <li>Integration and Probabilities</li>
-          <li>Data Analysis</li>
-          <li>Modelisation</li>
-          <li>Statistics</li>
-          <li>Optimization</li>
+      <!-- ENGINEERING COURSES -->
+      <section class="panel" role="tabpanel" id="p-courses" aria-labelledby="t-courses" tabindex="0">
+        <h2>Engineering Courses</h2>
+        <p class="lead">The courses and projects I have followed at ENSEEIHT, semester by semester. I update this page after each semester.</p>
+
+        <ol class="rail">
+          <li class="stop current">
+            <span class="node" aria-hidden="true">S7</span>
+            <div class="stop-head">
+              <h3>Semester 7</h3>
+              <span class="pill">In progress</span>
+              <p class="stop-sub">Second year, Systems and Networks Architecture track</p>
+            </div>
+            <ul class="ue-list">
+              <li>
+                <span class="ue-title">Internet and Graphs</span>
+                <ul class="ue-courses"><li>Internet</li><li>Graph theory</li><li>Interconnection project</li></ul>
+              </li>
+              <li>
+                <span class="ue-title">Local and Telecommunication Networks</span>
+                <ul class="ue-courses"><li>Local networks</li><li>Telecommunication networks</li></ul>
+              </li>
+              <li>
+                <span class="ue-title">Computer Architecture</span>
+              </li>
+              <li>
+                <span class="ue-title">Functional Programming and Language Translation</span>
+                <ul class="ue-courses"><li>Functional programming</li><li>Language translation</li><li>Functional programming and language translation projects</li></ul>
+              </li>
+              <li>
+                <span class="ue-title">Concurrent and Communicating Systems</span>
+                <ul class="ue-courses"><li>Concurrent systems</li><li>Middleware</li><li>Distributed data project</li></ul>
+              </li>
+            </ul>
+            <p class="stop-note">Personal project this semester: <a href="#project-network">multi-site virtual network</a>.</p>
+          </li>
+
+          <li class="stop">
+            <span class="node" aria-hidden="true">S6</span>
+            <div class="stop-head">
+              <h3>Semester 6</h3>
+              <p class="stop-sub">First year</p>
+            </div>
+            <ul class="ue-list">
+              <li><span class="ue-title">Signal Processing – Telecommunications</span></li>
+              <li><span class="ue-title">Networks</span></li>
+              <li><span class="ue-title">Scientific Computing – Machine Learning</span></li>
+              <li><span class="ue-title">Object Technology</span></li>
+              <li><span class="ue-title">Architecture – Systems</span></li>
+            </ul>
+            <p class="stop-note">Projects this semester: <a href="#project-isp">simplified internet service provider</a> and <a href="#project-gravity">Gravity Bot</a>.</p>
+          </li>
+
+          <li class="stop">
+            <span class="node" aria-hidden="true">S5</span>
+            <div class="stop-head">
+              <h3>Semester 5</h3>
+              <p class="stop-sub">First year, core foundations of digital sciences</p>
+            </div>
+            <ul class="ue-list">
+              <li><span class="ue-title">Integration and Applications – Probability</span></li>
+              <li><span class="ue-title">Imperative Programming</span></li>
+              <li><span class="ue-title">Numerical Analysis – Statistics</span></li>
+              <li><span class="ue-title">Automatic Control – Data Analysis</span></li>
+              <li><span class="ue-title">Modelling – Architecture</span></li>
+            </ul>
+            <p class="stop-note muted">Alongside: soft and human skills (English, German, sport, careers and management). Programming languages used: Python, C and Ada.</p>
+          </li>
+        </ol>
+
+        <div class="projects" id="projects">
+          <h3>Projects</h3>
+
+          <article class="project" id="project-network">
+            <dl class="facts">
+              <dt>When</dt><dd>Autumn 2026</dd>
+              <dt>Context</dt><dd>Personal project</dd>
+              <dt>Team</dt><dd>With Achraf Talhaoui</dd>
+              <dt>Tools</dt><dd>Docker, Containerlab, FRRouting, WireGuard, nftables, dnsmasq, Nginx</dd>
+            </dl>
+            <div>
+              <h4>Multi-site virtual network</h4>
+              <p>Two company sites linked through a simulated internet service provider, all running in containers from a single Containerlab topology file.</p>
+              <ul class="did">
+                <li>The sites and the provider exchange routes with eBGP, and the sites announce only the links needed to reach each other.</li>
+                <li>A WireGuard tunnel carries the traffic between the sites, so it never crosses the provider in clear.</li>
+                <li>Each site has separate client and server networks, DHCP and DNS, address translation (NAT) and a default-deny nftables firewall.</li>
+                <li>Scripts deploy the lab, test every service, and replay two failures: a cut link to the provider and a cut tunnel. When the tunnel is down, traffic does not fall back to an unencrypted path.</li>
+              </ul>
+              <p><a href="https://github.com/samariyassine2006-rgb/Reseau-entreprise-virtualise" target="_blank" rel="noopener">View the project on GitHub</a></p>
+              <figure>
+                <img src="assets/schema-architecture.svg" alt="Architecture diagram: sites A and B, each with a router, a clients network and a servers network, linked by eBGP through a simulated provider, with a WireGuard tunnel between the two routers." width="1440" height="1000" loading="lazy">
+                <figcaption>Architecture of the final lab.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="project" id="project-isp">
+            <dl class="facts">
+              <dt>When</dt><dd>Semester 6, 2025–2026</dd>
+              <dt>Course</dt><dd>Networks</dd>
+              <dt>Format</dt><dd>Individual project</dd>
+              <dt>Tools</dt><dd>YANE (the school’s virtualization tool, based on Docker and network namespaces), VirtualBox</dd>
+            </dl>
+            <div>
+              <h4>Simplified internet service provider</h4>
+              <p>Design and configuration of a small provider and its services in a virtual environment.</p>
+              <ul class="did">
+                <li>An addressing plan for the provider core: three networks linked by routers, with redundancy.</li>
+                <li>Static routing first, then dynamic routing between the provider’s routers with RIP.</li>
+                <li>Home routers (boxes) and private networks for two customers.</li>
+                <li>The provider’s web and DNS services, placed in two DMZs.</li>
+                <li>Security: protecting the provider’s web server and a customer’s private network, and giving one customer access to the other customer’s web server.</li>
+              </ul>
+              <p>The work was assessed in an intermediate review and in a final demonstration followed by an oral.</p>
+            </div>
+          </article>
+
+          <article class="project" id="project-gravity">
+            <dl class="facts">
+              <dt>When</dt><dd>Semester 6, 2025–2026</dd>
+              <dt>Course</dt><dd>Object Technology</dd>
+              <dt>Tools</dt><dd>Java</dd>
+            </dl>
+            <div>
+              <h4>Gravity Bot</h4>
+              <p>A game written in Java in which the player must move a satellite from a starting point A to a target point B. The project applies object-oriented programming to a small interactive simulation.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL MOBILITY -->
+      <section class="panel" role="tabpanel" id="p-mobility" aria-labelledby="t-mobility" tabindex="0">
+        <h2>International Mobility</h2>
+        <p class="lead">International experiences are essential for my academic and personal growth. I aspire to study or work abroad to discover new cultures, develop adaptability, and build a global perspective on technology and innovation.</p>
+
+        <div class="entries">
+          <article class="entry">
+            <h3><img class="flag" src="https://flagcdn.com/w80/jp.png" alt="" width="34" height="23">Japan</h3>
+            <p>Japan fascinates me with its strong balance between tradition and technology. I admire how Japanese culture values discipline, teamwork, and innovation — all essential qualities for an engineer. Studying in Japan would also allow me to experience advanced robotics, AI, and digital systems firsthand, while exploring a rich and respectful culture.</p>
+          </article>
+          <article class="entry">
+            <h3><img class="flag" src="https://flagcdn.com/w80/us.png" alt="" width="34" height="18">United States</h3>
+            <p>The USA represents the heart of global innovation and entrepreneurship. I would love to study or work there to develop my skills in cutting-edge technologies such as artificial intelligence and data science, and to experience a fast-paced, ambitious environment that pushes me to grow as both a student and a professional.</p>
+          </article>
+          <article class="entry">
+            <h3><img class="flag" src="https://flagcdn.com/w80/ca.png" alt="" width="34" height="17">Canada</h3>
+            <p>Canada attracts me for its cultural diversity, inclusive society, and excellent universities in the field of digital sciences. I appreciate the strong emphasis on collaboration and research there, which matches my vision of innovation through teamwork and open-mindedness.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SUSTAINABILITY & CIVIC ENGAGEMENT -->
+      <section class="panel" role="tabpanel" id="p-civic" aria-labelledby="t-civic" tabindex="0">
+        <h2>Sustainability &amp; Civic Engagement</h2>
+        <p class="lead">I participate in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
+
+        <div class="entries">
+          <article class="entry">
+            <h3>Integration week: the “King Kong” theatre play</h3>
+            <p>During the integration week, I attended the theatre play <strong>“King Kong”</strong>, which raised awareness about <strong>sexual and sexist harassment</strong>. It was a powerful and emotional performance that highlighted the importance of respect, equality, and solidarity within our community.</p>
+          </article>
+          <article class="entry">
+            <h3>“L’Hiver Sera Chaud”, 7 October 2025</h3>
+            <p>On <strong>October 7th, 2025</strong>, I attended the event <strong>“L’Hiver Sera Chaud”</strong>, which promotes social engagement, inclusion, and environmental awareness. It was an inspiring opportunity to connect with motivated students and organizations working towards a fairer and more sustainable world.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SPORT & OTHER ACTIVITIES -->
+      <section class="panel" role="tabpanel" id="p-sport" aria-labelledby="t-sport" tabindex="0">
+        <h2>Sport &amp; Other Activities</h2>
+        <p class="lead">Sports and hobbies are an essential part of my student life. They help me stay healthy, focused, and creative.</p>
+
+        <div class="sport">
+          <article>
+            <img src="football.jpeg" alt="Playing football" width="304" height="166" loading="lazy">
+            <h3>Football</h3>
+            <p>I love playing football with friends and classmates. It’s a great way to stay active, improve teamwork, and release stress after classes.</p>
+          </article>
+          <article>
+            <img src="ping%20pongg.jpeg" alt="Playing ping pong" width="275" height="183" loading="lazy">
+            <h3>Ping pong</h3>
+            <p>Ping pong helps me improve focus, reflexes, and precision. I often play during breaks at school with classmates.</p>
+          </article>
+          <article>
+            <img src="cooking.jpeg" alt="Cooking" width="275" height="183" loading="lazy">
+            <h3>Cooking</h3>
+            <p>Cooking is one of my favorite hobbies outside of studies. It allows me to be creative and share good moments with friends.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CAREER DEVELOPMENT -->
+      <section class="panel" role="tabpanel" id="p-career" aria-labelledby="t-career" tabindex="0">
+        <h2>Career Development</h2>
+        <p class="lead">My career goal is to become a digital systems engineer, contributing to innovation in technology, AI, or embedded systems.</p>
+
+        <ul class="downloads">
+          <li>
+            <a class="btn" href="CV_Yassine_EN.pdf" target="_blank" rel="noopener">Download English CV (PDF)</a>
+            <span class="muted">Full English version of my CV.</span>
+          </li>
+          <li>
+            <a class="btn" href="CV_Yassine_FR.pdf" target="_blank" rel="noopener">Télécharger le CV en français (PDF)</a>
+            <span class="muted">Version complète de mon CV en français.</span>
+          </li>
         </ul>
-        <p>We also worked on small programming and design projects, applying theoretical knowledge to real-life problems.  
-        (This section will be updated after each semester to include new courses and reflections.)</p>
-      </div>
+      </section>
+
     </div>
+  </main>
 
-    <!-- MOBILITY -->
-<!-- MOBILITY -->
-<input type="radio" name="tab" id="tab3">
-<label for="tab3" class="tab-label">International Mobility</label>
-<div class="tab-content">
-  <h2>International Mobility 🌍</h2>
-  <p>International experiences are essential for my academic and personal growth.  
-  I aspire to study or work abroad to discover new cultures, develop adaptability,  
-  and build a global perspective on technology and innovation.</p>
-
-  <div class="sub-tabs">
-    <h3>🇯🇵 Japan</h3>
-    <p>Japan fascinates me with its strong balance between tradition and technology.  
-    I admire how Japanese culture values discipline, teamwork, and innovation — all essential qualities for an engineer.  
-    Studying in Japan would also allow me to experience advanced robotics, AI, and digital systems firsthand,  
-    while exploring a rich and respectful culture.</p>
-    <div class="activity-photo">
-      <img src="https://flagcdn.com/w320/jp.png" alt="Japan Flag" />
+  <footer class="foot">
+    <div class="wrap">
+      <ul>
+        <li><span>Phone</span>+33 6 49 99 10 12</li>
+        <li><span>Email</span><a href="mailto:yassine.samari@etu.toulouse-inp.fr">yassine.samari@etu.toulouse-inp.fr</a></li>
+        <li><a href="https://www.linkedin.com/in/yassine-samari-53b1b7387/" target="_blank" rel="noopener">LinkedIn profile</a></li>
+      </ul>
     </div>
-  </div>
-
-  <div class="sub-tabs">
-    <h3>🇺🇸 United States</h3>
-    <p>The USA represents the heart of global innovation and entrepreneurship.  
-    I would love to study or work there to develop my skills in cutting-edge technologies  
-    such as artificial intelligence and data science,  
-    and to experience a fast-paced, ambitious environment that pushes me to grow  
-    as both a student and a professional.</p>
-    <div class="activity-photo">
-      <img src="https://flagcdn.com/w320/us.png" alt="USA Flag" />
-    </div>
-  </div>
-
-  <div class="sub-tabs">
-    <h3>🇨🇦 Canada</h3>
-    <p>Canada attracts me for its cultural diversity, inclusive society,  
-    and excellent universities in the field of digital sciences.  
-    I appreciate the strong emphasis on collaboration and research there,  
-    which matches my vision of innovation through teamwork and open-mindedness.</p>
-    <div class="activity-photo">
-      <img src="https://flagcdn.com/w320/ca.png" alt="Canada Flag" />
-    </div>
-  </div>
-</div>
-   
-
-
-
-    <!-- CIVIC ENGAGEMENT -->
-<input type="radio" name="tab" id="tab4">
-<label for="tab4" class="tab-label">Sustainability & Civic Engagement</label>
-<div class="tab-content">
-  <h2>Sustainability & Civic Engagement</h2>
-  <p>I participate in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
-
-  <div class="sub-tabs">
-    <h3>🎭 Integration Week — “King Kong” Theatre Play</h3>
-    <p>During the integration week, I attended the theatre play <strong>“King Kong”</strong>, which raised awareness about
-      <strong>sexual and sexist harassment</strong>.  
-      It was a powerful and emotional performance that highlighted the importance of respect, equality, and solidarity within our community.</p>
-  </div>
-
-  <div class="sub-tabs">
-    <h3>🔥 Event — “L’Hiver Sera Chaud” (07/10/2025)</h3>
-    <p>On <strong>October 7th, 2025</strong>, I attended the event <strong>“L’Hiver Sera Chaud”</strong>, which promotes social engagement, inclusion, and environmental awareness.
-      It was an inspiring opportunity to connect with motivated students and organizations working towards a fairer and more sustainable world.</p>
-  </div>
-</div>
-
-
-    <!-- SPORTS -->
-<!-- SPORTS -->
-<input type="radio" name="tab" id="tab5">
-<label for="tab5" class="tab-label">Sport & Other Activities</label>
-<div class="tab-content">
-  <h2>Sport & Other Activities</h2>
-  <p>Sports and hobbies are an essential part of my student life. They help me stay healthy, focused, and creative.  
-  Below are a few activities I regularly enjoy:</p>
-
-  <!-- FOOTBALL -->
-  <div class="sub-tabs">
-    <h3>⚽ Football</h3>
-    <p>I love playing football with friends and classmates. It’s a great way to stay active, improve teamwork, and release stress after classes.</p>
-    <div class="activity-photo">
-      <!-- 👇 Add your football photo here -->
-      <img src="football.jpeg" alt="Football activity" />
-    </div>
-  </div>
-
-  <!-- PING PONG -->
-  <div class="sub-tabs">
-    <h3>🏓 Ping Pong</h3>
-    <p>Ping Pong helps me improve focus, reflexes, and precision. I often play during breaks at school with classmates.</p>
-    <div class="activity-photo">
-      <!-- 👇 Add your ping pong photo here -->
-      <img src="ping pongg.jpeg" alt="Ping Pong activity" />
-    </div>
-  </div>
-
-  <!-- COOKING -->
-  <div class="sub-tabs">
-    <h3>🍳 Cooking</h3>
-    <p>Cooking is one of my favorite hobbies outside of studies. It allows me to be creative and share good moments with friends.</p>
-    <div class="activity-photo">
-      <!-- 👇 Add your cooking photo here -->
-      <img src="cooking.jpeg" alt="Cooking activity" />
-    </div>
-  </div>
-</div>
-
-
-    <!-- CAREER -->
-    <input type="radio" name="tab" id="tab6">
-    <label for="tab6" class="tab-label">Career Development</label>
-    <div class="tab-content">
-      <h2>Career Development</h2>
-      <p>My career goal is to become a digital systems engineer, contributing to innovation in technology, AI, or embedded systems.</p>
-
-      <div class="cv-section">
-        <h3>CV in French</h3>
-        <p>Version complète de mon CV en français — à télécharger ici :  
-        <a href="CV_Yassine_FR.pdf" target="_blank">Télécharger le CV Français</a></p>
-
-        <h3>CV in English</h3>
-        <p>Full English version of my CV — download here:  
-        <a href="CV_Yassine_EN.pdf" target="_blank">Download English CV</a></p>
-      </div>
-    </div>
-  </div>
-  <!-- FOOTER -->
-  <footer>
-    <p>📞 +33 6 49 99 10 12 | 📧 yassine.samari@etu.toulouse-inp.fr | 🔗 
-      <a href="https://www.linkedin.com/in/yassine-samari-53b1b7387/" target="_blank">LinkedIn Profile</a>
-    </p>
   </footer>
 
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+
+      var head = document.querySelector('.masthead');
+      var list = document.querySelector('.tablist');
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+      var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+      var current = 0;
+
+      function centerTab(tab) {
+        list.scrollLeft = tab.offsetLeft - (list.clientWidth - tab.offsetWidth) / 2;
+      }
+
+      function show(index, opts) {
+        opts = opts || {};
+        current = index;
+        tabs.forEach(function (tab, i) {
+          var on = i === index;
+          tab.setAttribute('aria-selected', on ? 'true' : 'false');
+          tab.tabIndex = on ? 0 : -1;
+          panels[i].hidden = !on;
+        });
+        centerTab(tabs[index]);
+        if (opts.focus) tabs[index].focus();
+        if (opts.resetScroll && window.scrollY > head.offsetHeight) window.scrollTo(0, head.offsetHeight);
+        if (opts.hash) history.replaceState(null, '', '#' + tabs[index].id.slice(2));
+      }
+
+      function fromHash() {
+        var id = decodeURIComponent(location.hash.slice(1));
+        if (!id) return false;
+        var tabIndex = tabs.findIndex(function (t) { return t.id === 't-' + id; });
+        if (tabIndex > -1) { show(tabIndex); return true; }
+        var target = document.getElementById(id);
+        var panel = target && target.closest('[role="tabpanel"]');
+        if (panel) {
+          show(panels.indexOf(panel));
+          target.scrollIntoView();
+          return true;
+        }
+        return false;
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { show(i, { resetScroll: true, hash: true }); });
+        tab.addEventListener('keydown', function (e) {
+          var next = null;
+          if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+          else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+          else if (e.key === 'Home') next = 0;
+          else if (e.key === 'End') next = tabs.length - 1;
+          if (next !== null) { e.preventDefault(); show(next, { focus: true, hash: true }); }
+        });
+      });
+
+      window.addEventListener('hashchange', fromHash);
+      if (!fromHash()) show(0);
+    })();
+  </script>
 </body>
 </html>
-
