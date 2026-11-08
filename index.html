@@ -134,6 +134,15 @@
     .topo .t-tun { font-size: 13.5px; font-weight: 700; fill: var(--accent-deep); }
     .topo .halo { paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; }
 
+    /* ---------- Logos ---------- */
+    .ico { display: inline-block; width: 1.05em; height: 1.05em; vertical-align: -0.16em; margin-right: 7px; background: currentColor; -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+    .tags .ico { width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; }
+    .ico-c { width: 1.1em; height: 1.1em; vertical-align: -0.18em; margin-right: 8px; border-radius: 2px; }
+    .school { display: flex; align-items: center; gap: 22px; margin: 30px 0 0; }
+    .school img { height: 48px; width: auto; flex: none; }
+    .school .meta { max-width: 52ch; font-size: 0.9375rem; line-height: 1.4; }
+    .tools { margin-top: 28px; }
+
     /* ---------- Welcome: project list, about, skills ---------- */
     .work { list-style: none; }
     .work > li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px 48px; padding: 26px 0; border-top: 1px solid var(--rule); }
@@ -358,7 +367,7 @@
               </div>
               <div>
                 <p>Two company sites reached through a simulated provider with eBGP, linked by an encrypted WireGuard tunnel, with DHCP, DNS, NAT and a firewall. Deployed and tested by scripts.</p>
-                <ul class="tags"><li>Docker</li><li>Containerlab</li><li>FRRouting</li><li>WireGuard</li><li>nftables</li></ul>
+                <ul class="tags"><li><i class="ico" style="--i:url(assets/logos/docker.svg)"></i>Docker</li><li>Containerlab</li><li>FRRouting</li><li><i class="ico" style="--i:url(assets/logos/wireguard.svg)"></i>WireGuard</li><li>nftables</li></ul>
               </div>
             </li>
             <li>
@@ -415,6 +424,7 @@
               <p>UML design, Git and GitHub, agile teamwork with user stories and sprints</p>
             </div>
           </div>
+          <ul class="tags tools" aria-label="Tools I use"><li><i class="ico" style="--i:url(assets/logos/python.svg)"></i>Python</li><li><i class="ico" style="--i:url(assets/logos/git.svg)"></i>Git</li><li><i class="ico" style="--i:url(assets/logos/github.svg)"></i>GitHub</li><li><i class="ico" style="--i:url(assets/logos/docker.svg)"></i>Docker</li><li><i class="ico" style="--i:url(assets/logos/wireguard.svg)"></i>WireGuard</li><li><i class="ico" style="--i:url(assets/logos/nginx.svg)"></i>Nginx</li></ul>
         </section>
       </section>
 
@@ -422,6 +432,10 @@
       <section class="panel" role="tabpanel" id="p-courses" aria-labelledby="t-courses" tabindex="0">
         <h2>Engineering Courses</h2>
         <p class="lead">The courses and projects I have followed at ENSEEIHT, semester by semester. I update this page after each semester.</p>
+        <div class="school">
+          <img src="assets/logos/toulouse-inp-n7.png" alt="Toulouse INP – ENSEEIHT" width="331" height="120">
+          <span class="meta">ENSEEIHT, école d’ingénieurs de Toulouse INP</span>
+        </div>
 
         <div class="sems">
           <section class="sem">
@@ -749,20 +763,20 @@ for (Obstacle obs : obstacles) {
         <p class="lead">My career goal is to become a digital systems engineer, contributing to innovation in technology, AI, or embedded systems.</p>
         <ul class="downloads">
           <li>
-            <a class="btn btn-primary" href="CV_Yassine_EN.pdf" target="_blank" rel="noopener">Download the English CV</a>
+            <a class="btn btn-primary" href="Yassine_Samari_CV_EN.pdf" target="_blank" rel="noopener">Download the English CV</a>
             <p class="meta">Full English version of my CV (PDF).</p>
           </li>
           <li>
-            <a class="btn btn-primary" href="CV_Yassine_FR.pdf" target="_blank" rel="noopener">Télécharger le CV en français</a>
+            <a class="btn btn-primary" href="Yassine_Samari_CV_FR.pdf" target="_blank" rel="noopener">Télécharger le CV en français</a>
             <p class="meta">Version complète de mon CV en français (PDF).</p>
           </li>
         </ul>
         <div class="contact">
           <h3>Contact</h3>
           <ul>
-            <li><span>Email</span><a href="mailto:samari.yassine@etu.inp-n7.fr">samari.yassine@etu.inp-n7.fr</a></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/yassine-samari-53b1b7387/" target="_blank" rel="noopener">Yassine Samari</a></li>
-            <li><span>GitHub</span><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener">samariyassine2006-rgb</a></li>
+            <li><span>Email</span><a href="mailto:samari.yassine@etu.inp-n7.fr"><i class="ico" style="--i:url(assets/logos/mail.svg)"></i>samari.yassine@etu.inp-n7.fr</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/yassine-samari/" target="_blank" rel="noopener"><img class="ico-c" src="assets/logos/linkedin.svg" alt="" width="20" height="20">Yassine Samari</a></li>
+            <li><span>GitHub</span><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener"><i class="ico" style="--i:url(assets/logos/github.svg)"></i>samariyassine2006-rgb</a></li>
           </ul>
         </div>
       </section>
@@ -773,9 +787,9 @@ for (Obstacle obs : obstacles) {
   <footer class="foot">
     <div class="wrap">
       <ul>
-        <li><a href="mailto:samari.yassine@etu.inp-n7.fr">samari.yassine@etu.inp-n7.fr</a></li>
-        <li><a href="https://www.linkedin.com/in/yassine-samari-53b1b7387/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:samari.yassine@etu.inp-n7.fr"><i class="ico" style="--i:url(assets/logos/mail.svg)"></i>samari.yassine@etu.inp-n7.fr</a></li>
+        <li><a href="https://www.linkedin.com/in/yassine-samari/" target="_blank" rel="noopener"><img class="ico-c" src="assets/logos/linkedin.svg" alt="" width="20" height="20">LinkedIn</a></li>
+        <li><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener"><i class="ico" style="--i:url(assets/logos/github.svg)"></i>GitHub</a></li>
       </ul>
     </div>
   </footer>
