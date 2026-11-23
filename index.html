@@ -3,446 +3,624 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Yassine Samari — Engineering student portfolio</title>
-  <meta name="description" content="E-portfolio of Yassine Samari, second-year engineering student at ENSEEIHT (Digital Sciences, Systems and Networks Architecture track): courses, projects, activities and CV.">
-  <meta name="theme-color" content="#0e2a33">
-  <meta property="og:title" content="Yassine Samari — Engineering student portfolio">
-  <meta property="og:description" content="Courses, projects, activities and CV of a second-year engineering student at ENSEEIHT.">
+  <title>Yassine Samari — Systems &amp; Networks Engineering Student</title>
+  <meta name="description" content="E-portfolio of Yassine Samari, second-year engineering student at ENSEEIHT (Toulouse INP), Systems and Networks Architecture track: projects, courses, activities and CV.">
+  <meta name="theme-color" content="#0f2638">
+  <meta property="og:title" content="Yassine Samari — Systems &amp; Networks Engineering Student">
+  <meta property="og:description" content="Projects, courses, activities and CV of a second-year engineering student at ENSEEIHT.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/yassine-samari.jpg">
 
-  <link rel="preload" href="assets/fonts/pagella-regular.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="assets/fonts/pagella-bold.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="assets/fonts/carlito-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- Fonts (self-hosted, see assets/fonts/README.txt) ---------- */
-    @font-face { font-family: "Pagella Web"; src: url("assets/fonts/pagella-regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Pagella Web"; src: url("assets/fonts/pagella-italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
-    @font-face { font-family: "Pagella Web"; src: url("assets/fonts/pagella-bold.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Carlito Web"; src: url("assets/fonts/carlito-regular.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: "Carlito Web"; src: url("assets/fonts/carlito-bold.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
-
-    /* ---------- Tokens ---------- */
     :root {
-      --ink: #0e2a33;
-      --ink-2: #475b63;
-      --ground: #f2f5f4;
+      --navy: #0f2638;
+      --navy-2: #173550;
+      --ink: #13202b;
+      --muted: #5a6876;
+      --bg: #f5f7fa;
       --surface: #ffffff;
-      --rule: #d2dcdc;
-      --rule-strong: #9fb2b5;
-      --accent: #0b7a75;
-      --accent-deep: #08605c;
-      --accent-tint: #dcefed;
-      --mint: #6ad7cc;
-      --amber: #e39a2d;
-      --serif: "Pagella Web", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-      --ui: "Carlito Web", Calibri, "Segoe UI", system-ui, -apple-system, sans-serif;
-      --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, "DejaVu Sans Mono", monospace;
-      --max: 1120px;
-      --gutter: 32px;
-      --bar-h: 58px;
+      --line: #e2e7ed;
+      --accent: #2c6aa0;
+      --accent-dark: #1f5482;
+      --accent-soft: #e6eff8;
+      --sand: #d9c2a5;
+      --font: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+      --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+      --max: 1160px;
+      --radius: 14px;
+      --shadow: 0 1px 2px rgba(16,32,48,.05), 0 8px 24px rgba(16,32,48,.06);
+      --nav-h: 64px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0; min-height: 100vh; display: flex; flex-direction: column;
-      background: var(--ground); color: var(--ink);
-      font: 400 1.0625rem/1.62 var(--serif);
-    }
-    .wrap { width: min(var(--max), 100% - var(--gutter) * 2); margin-inline: auto; }
-    p { margin: 0 0 1em; max-width: 66ch; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    h1, h2, h3, h4, h5 { margin: 0; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); }
+    p { margin: 0 0 1em; }
     ul { margin: 0; padding: 0; }
-    img { max-width: 100%; }
-    a { color: var(--accent-deep); text-underline-offset: 3px; text-decoration-thickness: 1px; }
-    a:hover { text-decoration-thickness: 2px; }
-    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-    [hidden] { display: none !important; }
+    .wrap { width: min(var(--max), 100% - 48px); margin-inline: auto; }
 
-    .skip { position: absolute; left: 12px; top: -64px; z-index: 60; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 6px; font-family: var(--ui); }
+    .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; }
     .skip:focus { top: 10px; }
 
-    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; margin: 0; color: var(--ink); }
-    h5 { font: 700 1.0625rem/1.3 var(--ui); margin: 0 0 6px; color: var(--ink); }
-    .meta { font-family: var(--ui); font-size: 1rem; color: var(--ink-2); margin: 0; }
-
-    /* ---------- Top bar ---------- */
-    .bar { position: sticky; top: 0; z-index: 40; background: var(--ink); }
-    .bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .brand { flex: none; color: #fff; text-decoration: none; font: 700 1.2rem/1 var(--serif); padding: 18px 0; letter-spacing: 0.005em; }
+    /* ---------- Navigation ---------- */
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(15,38,56,.92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; white-space: nowrap; }
     .brand:hover { color: #fff; text-decoration: none; }
-    .bar nav { min-width: 0; }
-    .tablist { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; min-width: 0; }
-    .tablist::-webkit-scrollbar { display: none; }
-    [role="tab"] {
-      appearance: none; background: none; border: 0; border-bottom: 3px solid transparent;
-      padding: 19px 8px 16px; cursor: pointer; white-space: nowrap;
-      font: 700 1rem/1 var(--ui); color: #b4c8cb;
-    }
-    [role="tab"]:hover { color: #fff; }
-    [role="tab"][aria-selected="true"] { color: #fff; border-bottom-color: var(--mint); }
-    [role="tab"]:focus-visible { outline: 2px solid var(--mint); outline-offset: -4px; }
-    html:not(.js) .tablist { display: none; }
+    .brand-mark { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--sand), #b99670); color: var(--navy); display: grid; place-items: center; font-size: .85rem; font-weight: 800; letter-spacing: 0; }
+    .links { display: flex; gap: 2px; list-style: none; overflow-x: auto; scrollbar-width: none; }
+    .links::-webkit-scrollbar { display: none; }
+    .links a { display: block; padding: 8px 12px; border-radius: 8px; color: #c3d0dc; font-size: .9rem; font-weight: 500; white-space: nowrap; }
+    .links a:hover, .links a.active { color: #fff; background: rgba(255,255,255,.08); text-decoration: none; }
+    .nav-cta { flex: none; }
+    .menu-btn { display: none; background: none; border: 0; color: #fff; padding: 8px; cursor: pointer; }
 
-    /* ---------- Panels ---------- */
-    main { flex: 1; }
-    .panel { padding: 56px 0 104px; }
-    .panel:not([hidden]) { animation: panel-in 0.16s ease-out; }
-    @keyframes panel-in { from { opacity: 0; } to { opacity: 1; } }
-    html:not(.js) .panel { border-bottom: 1px solid var(--rule); }
-    h2 { font-size: clamp(2.1rem, 1.5rem + 2vw, 2.9rem); line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 18px; }
-    h3 { font-size: 1.65rem; line-height: 1.2; }
-    .lead { font-size: 1.25rem; line-height: 1.55; max-width: 52ch; }
-    .block { margin-top: 80px; padding-top: 44px; border-top: 1px solid var(--rule); scroll-margin-top: calc(var(--bar-h) + 16px); }
-    .block > h3 { margin-bottom: 28px; }
+    /* ---------- Buttons & tags ---------- */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font: 600 .95rem/1 var(--font); border: 1.5px solid transparent; transition: background .15s, color .15s, border-color .15s, transform .15s; cursor: pointer; }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--sand); color: var(--navy); }
+    .btn-primary:hover { background: #e6d2b8; color: var(--navy); }
+    .btn-ghost { border-color: rgba(255,255,255,.28); color: #fff; }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); color: #fff; }
+    .btn-dark { background: var(--navy); color: #fff; }
+    .btn-dark:hover { background: var(--navy-2); color: #fff; }
+    .btn-outline { border-color: var(--line); color: var(--ink); background: var(--surface); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-sm { padding: 9px 14px; font-size: .875rem; }
+    .btn svg { width: 18px; height: 18px; }
 
-    /* ---------- Buttons, tags ---------- */
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 0; }
-    .btn { display: inline-block; font: 700 1.0625rem/1 var(--ui); padding: 14px 22px; border-radius: 6px; text-decoration: none; border: 2px solid var(--ink); }
-    .btn-primary { background: var(--ink); color: #fff; }
-    .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; text-decoration: none; }
-    .btn-quiet { background: transparent; color: var(--ink); }
-    .btn-quiet:hover { background: var(--ink); color: #fff; text-decoration: none; }
-    .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
-    .tags li { font: 400 0.9375rem/1.2 var(--ui); background: #e3ebeb; color: var(--ink); padding: 4px 9px; border-radius: 4px; }
-    .status { display: inline-flex; align-items: center; gap: 7px; font: 700 0.9375rem/1 var(--ui); color: #6b4200; margin: 12px 0 0; }
-    .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--amber); }
+    .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+    .tags li { font-size: .8rem; font-weight: 500; background: var(--accent-soft); color: var(--accent-dark); padding: 4px 10px; border-radius: 999px; }
 
     /* ---------- Hero ---------- */
-    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); gap: 56px; align-items: center; }
-    h1 { font-size: clamp(2.5rem, 1.4rem + 3.5vw, 4.1rem); line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 24px; }
-    .hero .lead { margin: 0; }
-    .figure-frame { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 14px 8px; }
-    figure { margin: 0; }
-    figcaption { font-family: var(--ui); font-size: 1rem; line-height: 1.45; color: var(--ink-2); margin-top: 10px; max-width: 70ch; }
-    .topo { display: block; width: 100%; height: auto; font-family: var(--ui); }
-    .topo .site { fill: none; stroke: var(--rule-strong); stroke-width: 1.2; stroke-dasharray: 5 5; }
-    .topo .node { stroke-width: 1.5; }
-    .topo .router { fill: var(--accent-tint); stroke: var(--accent); }
-    .topo .isp { fill: #e8eded; stroke: #7c9296; }
-    .topo .lan { fill: #fff; stroke: var(--rule-strong); }
+    .hero { background: radial-gradient(1100px 500px at 85% 10%, #24506f 0%, transparent 60%), linear-gradient(180deg, var(--navy) 0%, #12304a 100%); color: #dbe5ee; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 64px; align-items: center; padding: 72px 0 88px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 600; color: var(--sand); background: rgba(217,194,165,.1); border: 1px solid rgba(217,194,165,.25); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4fd1a5; box-shadow: 0 0 0 4px rgba(79,209,165,.18); }
+    .hero h1 { color: #fff; font-size: clamp(2.6rem, 1.6rem + 4vw, 4.4rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 14px; }
+    .hero .role { font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); font-weight: 600; color: #fff; margin-bottom: 18px; }
+    .hero .role span { color: var(--sand); }
+    .hero .intro { font-size: 1.075rem; max-width: 54ch; color: #b9c8d6; margin-bottom: 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+    .facts-row { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px 40px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); }
+    .facts-row dt { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: #8ea3b6; margin-bottom: 4px; }
+    .facts-row dd { margin: 0; color: #fff; font-weight: 600; }
+    .socials { display: flex; gap: 10px; margin-top: 30px; }
+    .socials a { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 10px; background: rgba(255,255,255,.07); color: #fff; transition: background .15s; }
+    .socials a:hover { background: rgba(255,255,255,.16); }
+    .socials svg { width: 20px; height: 20px; }
+
+    .portrait { position: relative; justify-self: end; width: 100%; max-width: 430px; }
+    .portrait::before { content: ""; position: absolute; inset: 24px -24px -24px 24px; border: 2px solid rgba(217,194,165,.45); border-radius: 22px; }
+    .portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 22px; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+    .portrait .badge { position: absolute; left: -28px; bottom: 40px; background: #fff; color: var(--ink); border-radius: 14px; padding: 12px 16px; box-shadow: 0 16px 40px rgba(0,0,0,.25); display: flex; align-items: center; gap: 12px; }
+    .portrait .badge img { width: 74px; height: auto; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+    .portrait .badge span { font-size: .8rem; line-height: 1.35; color: var(--muted); }
+    .portrait .badge strong { display: block; color: var(--ink); font-size: .9rem; }
+
+    /* ---------- Sections ---------- */
+    section.sec { padding: 96px 0; }
+    section.sec.alt { background: var(--surface); border-block: 1px solid var(--line); }
+    .sec-head { max-width: 720px; margin-bottom: 48px; }
+    .kicker { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 10px; }
+    .sec-head h2 { font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem); font-weight: 800; margin-bottom: 14px; }
+    .sec-head p { color: var(--muted); font-size: 1.075rem; margin: 0; }
+
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+    /* About */
+    .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+    .about-text p { font-size: 1.075rem; color: #2c3a46; }
+    .skills { display: grid; gap: 14px; }
+    .skill { padding: 20px 22px; }
+    .skill h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+    .skill h3 i { width: 30px; height: 30px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-style: normal; }
+    .skill h3 svg { width: 16px; height: 16px; }
+    .skill p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .tools { margin-top: 26px; }
+    .ico { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; background: currentColor; -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+
+    /* Project cards */
+    .proj-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .proj { display: flex; flex-direction: column; padding: 26px; transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .proj:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(16,32,48,.05), 0 18px 40px rgba(16,32,48,.10); border-color: #cfd8e2; }
+    .proj .when { font-size: .8rem; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
+    .proj h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+    .proj p { color: var(--muted); font-size: .95rem; flex: 1; }
+    .proj .tags { margin: 6px 0 18px; }
+    .proj .more { font-weight: 600; font-size: .9rem; }
+    .proj.featured { grid-column: span 3; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 36px; align-items: center; padding: 32px; }
+    .proj.featured h3 { font-size: 1.6rem; }
+    .pill { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; background: var(--navy); color: var(--sand); padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
+
+    /* Network diagram */
+    .topo { display: block; width: 100%; height: auto; font-family: var(--font); }
+    .topo .site { fill: #f7f9fb; stroke: #c3ced9; stroke-width: 1.2; stroke-dasharray: 5 5; }
+    .topo .router { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .topo .isp { fill: #eef1f4; stroke: #8796a5; stroke-width: 1.5; }
+    .topo .lan { fill: #fff; stroke: #b4c1cd; stroke-width: 1.5; }
     .topo .link { stroke: var(--ink); stroke-width: 1.6; }
-    .topo .conn { stroke: var(--rule-strong); stroke-width: 1.4; fill: none; }
-    .topo .tunnel { fill: none; stroke: var(--accent); stroke-width: 2.8; stroke-dasharray: 0.1 7; stroke-linecap: round; }
-    .topo .dot { fill: var(--amber); stroke: #fff; stroke-width: 2; }
+    .topo .conn { stroke: #b4c1cd; stroke-width: 1.4; fill: none; }
+    .topo .tunnel { fill: none; stroke: #c08a4d; stroke-width: 2.8; stroke-dasharray: 0.1 7; stroke-linecap: round; }
+    .topo .dot { fill: #c08a4d; stroke: #fff; stroke-width: 2; }
     .topo .t-h { font-size: 15px; font-weight: 700; fill: var(--ink); }
-    .topo .t-s { font-size: 12px; fill: var(--ink-2); }
-    .topo .t-n { font-size: 12.5px; fill: var(--ink); }
-    .topo .t-n.b { font-weight: 700; }
-    .topo .t-m { font-size: 11.5px; fill: var(--ink-2); }
-    .topo .t-site { font-size: 13px; font-weight: 700; fill: var(--ink-2); }
-    .topo .t-tun { font-size: 13.5px; font-weight: 700; fill: var(--accent-deep); }
-    .topo .halo { paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; }
+    .topo .t-s { font-size: 12px; fill: var(--muted); }
+    .topo .t-n { font-size: 12.5px; font-weight: 700; fill: var(--ink); }
+    .topo .t-m { font-size: 11.5px; fill: var(--muted); }
+    .topo .t-site { font-size: 13px; font-weight: 700; fill: var(--muted); }
+    .topo .t-tun { font-size: 13.5px; font-weight: 700; fill: #9a6a33; }
+    .topo .halo { paint-order: stroke; stroke: #f7f9fb; stroke-width: 5px; stroke-linejoin: round; }
 
-    /* ---------- Logos ---------- */
-    .ico { display: inline-block; width: 1.05em; height: 1.05em; vertical-align: -0.16em; margin-right: 7px; background: currentColor; -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
-    .tags .ico { width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; }
-    .ico-c { width: 1.1em; height: 1.1em; vertical-align: -0.18em; margin-right: 8px; border-radius: 2px; }
-    .school { display: flex; align-items: center; gap: 22px; margin: 30px 0 0; }
-    .school img { height: 48px; width: auto; flex: none; }
-    .school .meta { max-width: 52ch; font-size: 0.9375rem; line-height: 1.4; }
-    .tools { margin-top: 28px; }
-
-    /* ---------- Welcome: project list, about, skills ---------- */
-    .work { list-style: none; }
-    .work > li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px 48px; padding: 26px 0; border-top: 1px solid var(--rule); }
-    .work h4 { font-size: 1.45rem; line-height: 1.25; margin-bottom: 4px; }
-    .work p { margin: 0; }
-    .work h4 a { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
-    .work h4 a:hover { color: var(--accent-deep); }
-    .about { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: start; }
-    .video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; background: #d3dedd; }
-    .portrait { position: relative; overflow: hidden; width: 120px; height: 120px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px var(--rule); margin-bottom: 20px; }
-    .portrait img { position: absolute; width: 192.3%; max-width: none; height: auto; left: -41%; top: -59%; }
-    .about h3 { margin-bottom: 12px; }
-    .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 48px; }
-    .skills p { margin: 0; color: var(--ink-2); }
-
-    /* ---------- Courses ---------- */
-    .sems { margin-top: 48px; border-bottom: 1px solid var(--rule); }
-    .sem { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 16px 40px; padding: 32px 0; border-top: 1px solid var(--rule); }
-    .sem-head h3 { margin-bottom: 4px; }
-    .ue-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px 36px; }
-    .ue-title { display: block; font-weight: 700; line-height: 1.35; }
-    .ue-courses { list-style: none; margin: 4px 0 0; font-family: var(--ui); font-size: 1rem; line-height: 1.4; color: var(--ink-2); }
-    .ue-courses li + li { margin-top: 2px; }
-    .note { margin: 24px 0 0; font-size: 1rem; }
-
-    .projects { margin-top: 80px; scroll-margin-top: calc(var(--bar-h) + 16px); }
-    .projects > h3 { margin-bottom: 8px; }
-    .case { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 20px 40px; padding: 40px 0; border-top: 1px solid var(--rule); scroll-margin-top: calc(var(--bar-h) + 8px); }
-    .projects > h3 + .case { margin-top: 20px; }
-    .case:last-child { border-bottom: 1px solid var(--rule); }
-    .case-head { grid-column: 1 / -1; }
-    .case-title { font-size: 2rem; line-height: 1.15; margin-bottom: 8px; letter-spacing: -0.005em; }
-    .case-sum { font-size: 1.2rem; line-height: 1.5; max-width: 62ch; margin: 0; }
-    .facts { margin: 0; font-family: var(--ui); font-size: 1rem; line-height: 1.4; }
-    .facts dt { font-weight: 700; margin-top: 14px; }
+    /* Case studies */
+    .cases { margin-top: 72px; display: grid; gap: 28px; }
+    .case { padding: 36px; }
+    .case-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px; padding-bottom: 22px; margin-bottom: 26px; border-bottom: 1px solid var(--line); }
+    .case-head h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 8px; }
+    .case-head p { color: var(--muted); max-width: 64ch; margin: 0; font-size: 1.025rem; }
+    .case-body { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; }
+    .facts { margin: 0; font-size: .92rem; }
+    .facts dt { font-weight: 700; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: 16px; }
     .facts dt:first-child { margin-top: 0; }
-    .facts dd { margin: 2px 0 0; color: var(--ink-2); }
-    .case-main > :first-child { margin-top: 0; }
-    .case-main h5 { margin-top: 28px; }
-    .case-main h5:first-child { margin-top: 0; }
-    .did { max-width: 66ch; padding-left: 1.15em; margin: 0 0 1em; }
-    .did li { margin-bottom: 6px; padding-left: 4px; }
+    .facts dd { margin: 4px 0 0; }
+    .case-main h4 { font-size: 1.05rem; font-weight: 700; margin: 26px 0 8px; }
+    .case-main h4:first-child { margin-top: 0; }
+    .case-main p { color: #2c3a46; }
+    .did { padding-left: 1.2em; margin: 0 0 1em; }
+    .did li { margin-bottom: 8px; padding-left: 4px; color: #2c3a46; }
     .did li::marker { color: var(--accent); }
-    .case-figs { grid-column: 1 / -1; display: grid; gap: 28px; margin-top: 8px; }
-    .case-figs .figure-frame { padding: 14px; }
-    .mid { max-width: 780px; }
-    .zoom { display: block; }
-    .zoom img { display: block; width: 100%; height: auto; }
-    pre.code { margin: 0 0 1.1em; padding: 16px 20px; background: #e6eded; border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; overflow-x: auto; font: 400 0.875rem/1.55 var(--mono); color: var(--ink); max-width: 100%; }
+    pre.code { margin: 0 0 1.1em; padding: 16px 20px; background: #0f2638; color: #d7e3ee; border-radius: 10px; overflow-x: auto; font: 400 .84rem/1.6 var(--mono); }
+    code { font-family: var(--mono); font-size: .9em; background: var(--accent-soft); padding: 1px 6px; border-radius: 5px; }
+    .figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+    .figs.one { grid-template-columns: minmax(0, 1fr); }
+    figure { margin: 0; }
+    .fig-frame { background: #f7f9fb; border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+    .fig-frame a { display: block; }
+    .fig-frame img { width: 100%; height: auto; border-radius: 6px; }
+    figcaption { font-size: .85rem; color: var(--muted); margin-top: 10px; }
 
-    /* ---------- Entries (mobility, civic) ---------- */
-    .cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 44px; }
-    .cols-3 > article { border-top: 2px solid var(--ink); padding-top: 18px; }
-    .cols-3 h3 { margin-bottom: 10px; }
-    .cols-3 p, .entry p { margin: 0; color: var(--ink); }
-    .entries { margin-top: 44px; border-bottom: 1px solid var(--rule); }
-    .entry { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 12px 48px; padding: 30px 0; border-top: 1px solid var(--rule); }
-    .entry h3 { font-size: 1.4rem; }
+    /* Courses */
+    .school { display: flex; align-items: center; gap: 18px; padding: 18px 22px; margin-bottom: 32px; max-width: 560px; }
+    .school img { height: 44px; width: auto; }
+    .school span { font-size: .92rem; color: var(--muted); }
+    .timeline { position: relative; display: grid; gap: 22px; }
+    .sem { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding: 28px 30px; }
+    .sem h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+    .sem .meta { color: var(--muted); font-size: .9rem; margin: 0; }
+    .status { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; font-size: .8rem; font-weight: 700; color: #8a5a12; background: #fdf1dd; padding: 4px 10px; border-radius: 999px; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #e39a2d; }
+    .ue-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 28px; }
+    .ue-title { display: block; font-weight: 600; line-height: 1.4; }
+    .ue-courses { list-style: none; margin-top: 4px; font-size: .88rem; color: var(--muted); }
+    .note { margin: 20px 0 0; font-size: .92rem; color: var(--muted); padding-top: 16px; border-top: 1px dashed var(--line); }
 
-    /* ---------- Sport ---------- */
-    .sports { margin-top: 44px; border-bottom: 1px solid var(--rule); }
-    .sport { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 12px 36px; align-items: center; padding: 26px 0; border-top: 1px solid var(--rule); }
-    .sport img { display: block; width: 220px; height: 147px; object-fit: cover; border-radius: 6px; }
-    .sport h3 { font-size: 1.4rem; margin-bottom: 6px; }
-    .sport p { margin: 0; }
+    /* Mobility / civic / sport */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .info { padding: 28px; }
+    .info .flag { font-size: 1.9rem; line-height: 1; margin-bottom: 14px; }
+    .info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+    .info p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .info .date { font-size: .8rem; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+    .sport { overflow: hidden; }
+    .sport img { width: 100%; height: 190px; object-fit: cover; }
+    .sport div { padding: 20px 22px 24px; }
+    .sport h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .sport p { color: var(--muted); font-size: .93rem; margin: 0; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 
-    /* ---------- Career ---------- */
-    .downloads { list-style: none; margin-top: 40px; max-width: 760px; border-bottom: 1px solid var(--rule); }
-    .downloads li { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; padding: 22px 0; border-top: 1px solid var(--rule); }
-    .downloads .meta { flex: 1 1 220px; }
-    .contact { margin-top: 56px; }
-    .contact h3 { margin-bottom: 16px; }
-    .contact ul { list-style: none; font-family: var(--ui); font-size: 1.125rem; }
-    .contact li { padding: 4px 0; }
-    .contact li span { display: inline-block; min-width: 90px; color: var(--ink-2); }
+    /* Career / contact */
+    .contact-band { background: linear-gradient(135deg, var(--navy) 0%, #1c4566 100%); color: #c9d6e2; border-radius: 22px; padding: 56px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: center; }
+    .contact-band h2 { color: #fff; font-size: clamp(1.8rem, 1.3rem + 1.4vw, 2.4rem); font-weight: 800; margin-bottom: 14px; }
+    .contact-band .kicker { color: var(--sand); }
+    .contact-band p { font-size: 1.05rem; }
+    .cv-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .contact-list { list-style: none; display: grid; gap: 12px; }
+    .contact-list a { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); color: #fff; transition: background .15s; }
+    .contact-list a:hover { background: rgba(255,255,255,.12); text-decoration: none; }
+    .contact-list i { width: 40px; height: 40px; border-radius: 10px; background: rgba(217,194,165,.15); color: var(--sand); display: grid; place-items: center; flex: none; font-style: normal; }
+    .contact-list svg { width: 19px; height: 19px; }
+    .contact-list small { display: block; font-size: .75rem; color: #8ea3b6; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-list span { font-weight: 600; word-break: break-all; }
 
-    /* ---------- Footer ---------- */
-    .foot { background: var(--ink); color: #c8d8da; padding: 26px 0; font-family: var(--ui); font-size: 1.0625rem; }
-    .foot ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 32px; }
-    .foot a { color: #fff; text-decoration-color: var(--mint); }
-    .foot a:hover { color: var(--mint); }
+    footer { padding: 32px 0 40px; color: var(--muted); font-size: .88rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    html:not(.js) .reveal { opacity: 1; transform: none; }
 
     /* ---------- Responsive ---------- */
-    @media (max-width: 1200px) {
-      .bar-inner { flex-wrap: wrap; gap: 0; }
-      .brand { width: 100%; padding: 14px 0 4px; }
-      [role="tab"] { padding: 12px 12px 12px; }
-      .bar nav { width: 100%; }
-      .tablist { width: 100%; }
+    @media (max-width: 1080px) {
+      .links { display: none; }
+      .menu-btn { display: block; }
+      .nav.open .links { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--navy); padding: 10px 24px 18px; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav-cta { display: none; }
     }
-    @media (max-width: 900px) {
-      .hero, .about { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-      .work > li, .entry { grid-template-columns: minmax(0, 1fr); }
-      .skills, .cols-3 { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-      .cols-3 { gap: 32px; }
-      .sem, .case { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-      .facts { order: 2; }
-      .case-main { order: 3; }
-      .case-figs { order: 4; }
-      .case-head { order: 1; }
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 56px; padding: 48px 0 72px; }
+      .portrait { justify-self: center; max-width: 380px; }
+      .about, .contact-band { grid-template-columns: minmax(0, 1fr); }
+      .proj-grid, .grid-3 { grid-template-columns: minmax(0, 1fr); }
+      .proj.featured { grid-column: auto; grid-template-columns: minmax(0, 1fr); }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .case-body, .sem { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      .figs { grid-template-columns: minmax(0, 1fr); }
     }
     @media (max-width: 600px) {
-      :root { --gutter: 20px; }
-      body { font-size: 1.0625rem; }
-      .panel { padding: 36px 0 72px; }
-      .block { margin-top: 56px; padding-top: 32px; }
-      .projects { margin-top: 56px; }
-      .case { padding: 32px 0; }
-      .sport { grid-template-columns: minmax(0, 1fr); }
-      .sport img { width: 100%; height: auto; aspect-ratio: 3 / 2; }
-      .case-title { font-size: 1.7rem; }
-      .actions .btn { flex: 1 1 100%; text-align: center; }
+      .wrap { width: calc(100% - 36px); }
+      section.sec { padding: 68px 0; }
+      .case, .contact-band { padding: 26px 22px; }
+      .sem { padding: 22px; }
+      .grid-2, .grid-4 { grid-template-columns: minmax(0, 1fr); }
+      .facts-row { grid-template-columns: repeat(2, auto); gap: 16px 28px; }
+      .portrait::before { inset: 16px -12px -16px 12px; }
+      .portrait .badge { left: -8px; }
+      .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .panel:not([hidden]) { animation: none; }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn, .proj { transition: none; }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
 
-  <header class="bar" id="bar">
-    <div class="wrap bar-inner">
-      <a class="brand" href="#welcome">Yassine Samari</a>
-      <nav aria-label="Portfolio sections">
-        <div class="tablist" role="tablist">
-          <button type="button" role="tab" id="t-welcome" aria-controls="p-welcome" aria-selected="true">Welcome</button>
-          <button type="button" role="tab" id="t-courses" aria-controls="p-courses" aria-selected="false">Engineering Courses</button>
-          <button type="button" role="tab" id="t-mobility" aria-controls="p-mobility" aria-selected="false">International Mobility</button>
-          <button type="button" role="tab" id="t-civic" aria-controls="p-civic" aria-selected="false">Sustainability &amp; Civic Engagement</button>
-          <button type="button" role="tab" id="t-sport" aria-controls="p-sport" aria-selected="false">Sport &amp; Other Activities</button>
-          <button type="button" role="tab" id="t-career" aria-controls="p-career" aria-selected="false">Career Development</button>
-        </div>
-      </nav>
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">YS</span>Yassine Samari</a>
+      <ul class="links" id="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#mobility">Mobility</a></li>
+        <li><a href="#civic">Engagement</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#career">Career</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="Yassine_Samari_CV_EN.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </header>
 
   <main id="content">
-    <div class="wrap">
 
-      <!-- WELCOME -->
-      <section class="panel" role="tabpanel" id="p-welcome" aria-labelledby="t-welcome" tabindex="0">
-        <div class="hero">
-          <div>
-            <h1>Second-year engineering student in systems and networks</h1>
-            <p class="lead">I study digital sciences at ENSEEIHT, on the Systems and Networks Architecture track. This portfolio gathers my courses, projects, activities and CV.</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="#projects">See my projects</a>
-              <a class="btn btn-quiet" href="#career">CV and contact</a>
-            </div>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Engineering student · ENSEEIHT, Toulouse INP</span>
+          <h1>Yassine Samari</h1>
+          <p class="role">Systems &amp; Networks <span>Engineering Student</span></p>
+          <p class="intro">Second-year engineering student in digital sciences at ENSEEIHT, on the Systems and Networks Architecture track. I build and test network infrastructures — routing, VPNs, firewalls and services — and enjoy turning complex systems into clean, reliable designs.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View my projects
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost" href="#career">CV &amp; contact</a>
           </div>
-          <figure>
-            <div class="figure-frame"><svg class="topo" viewBox="0 0 600 360" role="img" aria-labelledby="hero-t hero-d">
-  <title id="hero-t">Architecture of the multi-site virtual network</title>
-  <desc id="hero-d">Site A and site B each have a router, a clients network and a servers network. The two routers reach each other through a simulated internet provider using eBGP, and a WireGuard tunnel links them directly.</desc>
-
-  <rect class="site" x="8" y="78" width="188" height="272" rx="10"/>
-  <rect class="site" x="404" y="78" width="188" height="272" rx="10"/>
-  <text class="t-site" x="22" y="100">Site A</text>
-  <text class="t-site" x="578" y="100" text-anchor="end">Site B</text>
-
-  <line class="link" x1="170" y1="146" x2="232" y2="146"/>
-  <line class="link" x1="368" y1="146" x2="430" y2="146"/>
-  <text class="t-m halo" x="201" y="168" text-anchor="middle">eBGP</text>
-  <text class="t-m halo" x="399" y="168" text-anchor="middle">eBGP</text>
-
-  <rect class="node router" x="34" y="118" width="136" height="56" rx="8"/>
-  <text class="t-h" x="102" y="142" text-anchor="middle">R1</text>
-  <text class="t-s" x="102" y="160" text-anchor="middle">AS 65001</text>
-  <rect class="node isp" x="232" y="118" width="136" height="56" rx="8"/>
-  <text class="t-h" x="300" y="142" text-anchor="middle">R-ISP</text>
-  <text class="t-s" x="300" y="160" text-anchor="middle">AS 65000, provider</text>
-  <rect class="node router" x="430" y="118" width="136" height="56" rx="8"/>
-  <text class="t-h" x="498" y="142" text-anchor="middle">R2</text>
-  <text class="t-s" x="498" y="160" text-anchor="middle">AS 65002</text>
-
-  <path class="conn" d="M102 174 V198 M57 198 H147 M57 198 V222 M147 198 V222"/>
-  <path class="conn" d="M498 174 V198 M453 198 H543 M453 198 V222 M543 198 V222"/>
-
-  <rect class="node lan" x="16" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="57" y="242" text-anchor="middle">Clients</text>
-  <text class="t-m" x="57" y="258" text-anchor="middle">10.1.10.0/24</text>
-  <text class="t-m" x="57" y="274" text-anchor="middle">PC1 (DHCP)</text>
-  <rect class="node lan" x="106" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="147" y="242" text-anchor="middle">Servers</text>
-  <text class="t-m" x="147" y="258" text-anchor="middle">10.1.20.0/24</text>
-  <text class="t-m" x="147" y="274" text-anchor="middle">DNS</text>
-
-  <rect class="node lan" x="412" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="453" y="242" text-anchor="middle">Clients</text>
-  <text class="t-m" x="453" y="258" text-anchor="middle">10.2.10.0/24</text>
-  <text class="t-m" x="453" y="274" text-anchor="middle">PC2 (DHCP)</text>
-  <rect class="node lan" x="502" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="543" y="242" text-anchor="middle">Servers</text>
-  <text class="t-m" x="543" y="258" text-anchor="middle">10.2.20.0/24</text>
-  <text class="t-m" x="543" y="274" text-anchor="middle">Web (Nginx)</text>
-
-  <text class="t-m" x="102" y="316" text-anchor="middle">R1 also runs DHCP, NAT and</text>
-  <text class="t-m" x="102" y="331" text-anchor="middle">a default-deny firewall</text>
-  <text class="t-m" x="498" y="316" text-anchor="middle">R2 also runs DHCP, NAT and</text>
-  <text class="t-m" x="498" y="331" text-anchor="middle">a default-deny firewall</text>
-
-  <text class="t-m" x="300" y="206" text-anchor="middle">Only the two /30 links</text>
-  <text class="t-m" x="300" y="221" text-anchor="middle">are announced to the</text>
-  <text class="t-m" x="300" y="236" text-anchor="middle">provider, never the LANs</text>
-
-  <path id="tunnel-path" class="tunnel" d="M102 118 V70 Q102 50 122 50 H478 Q498 50 498 70 V118"/>
-  <text class="t-tun" x="300" y="38" text-anchor="middle">WireGuard tunnel</text>
-  <circle id="tunnel-dot" class="dot" r="6" cx="102" cy="118" style="opacity:0"/>
-</svg></div>
-            <figcaption>My main project: two sites linked through a simulated provider. The traffic between the sites travels inside a WireGuard tunnel, so the provider never sees it in clear. <a href="#project-network">Read about it</a>.</figcaption>
-          </figure>
+          <dl class="facts-row">
+            <div><dt>School</dt><dd>ENSEEIHT</dd></div>
+            <div><dt>Track</dt><dd>Systems &amp; Networks</dd></div>
+            <div><dt>Year</dt><dd>2nd year (S7)</dd></div>
+          </dl>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/yassine-samari/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg></a>
+            <a href="mailto:samari.yassine@etu.inp-n7.fr" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+          </div>
         </div>
 
-        <section class="block" aria-labelledby="h-work">
-          <h3 id="h-work">Projects</h3>
-          <ul class="work">
-            <li>
-              <div>
-                <h4><a href="#project-network">Multi-site virtual network</a></h4>
-                <p class="meta">Autumn 2026, with Achraf Talhaoui</p>
-              </div>
-              <div>
-                <p>Two company sites reached through a simulated provider with eBGP, linked by an encrypted WireGuard tunnel, with DHCP, DNS, NAT and a firewall. Deployed and tested by scripts.</p>
-                <ul class="tags"><li><i class="ico" style="--i:url(assets/logos/docker.svg)"></i>Docker</li><li>Containerlab</li><li>FRRouting</li><li><i class="ico" style="--i:url(assets/logos/wireguard.svg)"></i>WireGuard</li><li>nftables</li></ul>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h4><a href="#project-gravity">Gravity Bot</a></h4>
-                <p class="meta">Semester 6, group project</p>
-              </div>
-              <div>
-                <p>A Java game in which the player moves a satellite from a point A to a point B. I worked in the core team, which wrote the model of the game.</p>
-                <ul class="tags"><li>Java</li><li>UML</li><li>GitHub Projects</li><li>Scrum</li></ul>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h4><a href="#project-isp">Simplified internet service provider</a></h4>
-                <p class="meta">Semester 6, individual project</p>
-              </div>
-              <div>
-                <p>Addressing plan, routing, customer boxes, web and DNS services and security for a small provider, built in a virtual lab.</p>
-                <ul class="tags"><li>YANE</li><li>Routing</li><li>DNS</li><li>DMZ</li></ul>
-              </div>
-            </li>
+        <div class="portrait">
+          <img src="assets/yassine-samari.jpg" alt="Portrait of Yassine Samari" width="1000" height="1500" fetchpriority="high">
+          <div class="badge">
+            <img src="assets/logos/toulouse-inp-n7.png" alt="Toulouse INP – ENSEEIHT" width="331" height="120">
+            <span><strong>ENSEEIHT</strong>Toulouse INP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="sec" id="about">
+      <div class="wrap about">
+        <div class="about-text reveal">
+          <p class="kicker">About me</p>
+          <h2 style="font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem); font-weight: 800; margin-bottom: 20px;">Engineering is science, creativity and impact.</h2>
+          <p>My journey started with an early interest in technology and problem-solving, and led me to study digital sciences at ENSEEIHT, one of the engineering schools of Toulouse INP.</p>
+          <p>Today I specialise in systems and network architecture. I like understanding how things work end to end — from routing protocols and encrypted tunnels to the services running on top — and proving it with tests.</p>
+          <p>My ambition is to innovate and contribute to the global tech community. For me, engineering is not only about science, but also about creativity, collaboration and impact.</p>
+          <ul class="tags tools" aria-label="Tools I use">
+            <li><i class="ico" style="--i:url(assets/logos/python.svg)"></i>Python</li>
+            <li><i class="ico" style="--i:url(assets/logos/git.svg)"></i>Git</li>
+            <li><i class="ico" style="--i:url(assets/logos/github.svg)"></i>GitHub</li>
+            <li><i class="ico" style="--i:url(assets/logos/docker.svg)"></i>Docker</li>
+            <li><i class="ico" style="--i:url(assets/logos/wireguard.svg)"></i>WireGuard</li>
+            <li><i class="ico" style="--i:url(assets/logos/nginx.svg)"></i>Nginx</li>
           </ul>
-        </section>
+        </div>
+        <div class="skills reveal">
+          <article class="card skill">
+            <h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></i>Programming</h3>
+            <p>Python, C, Ada, Java, OCaml, VHDL, HTML and CSS</p>
+          </article>
+          <article class="card skill">
+            <h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg></i>Networks &amp; systems</h3>
+            <p>Docker, Containerlab, FRRouting (OSPF, eBGP), WireGuard, nftables, DHCP and DNS, Nginx</p>
+          </article>
+          <article class="card skill">
+            <h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.7 2.6 2.4 3 5.2"/></svg></i>Working methods</h3>
+            <p>UML design, Git and GitHub, agile teamwork with user stories and sprints (Scrum)</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <section class="block about" aria-labelledby="h-about">
-          <iframe class="video"
-            src="https://www.youtube-nocookie.com/embed/Byrs0deHYHE"
-            title="Yassine Samari – presentation video"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-          <div>
-            <div class="portrait"><img src="samari-yassine.jpg.jpg" alt="Portrait of Yassine Samari" width="1077" height="1417"></div>
-            <h3 id="h-about">More about me</h3>
-            <p>In this short video, I share my journey: from my early interests in technology and problem-solving, to my present studies in digital sciences at ENSEEIHT, and my future ambitions to innovate and contribute to the global tech community. I believe that engineering is not only about science but also about creativity, collaboration, and impact.</p>
-          </div>
-        </section>
-
-        <section class="block" aria-labelledby="h-skills">
-          <h3 id="h-skills">Skills and tools</h3>
-          <div class="skills">
-            <div>
-              <h5>Programming</h5>
-              <p>Python, C, Ada, Java, OCaml, VHDL, HTML and CSS</p>
-            </div>
-            <div>
-              <h5>Networks and systems</h5>
-              <p>Docker, Containerlab, FRRouting (OSPF, eBGP), WireGuard, nftables, DHCP and DNS, Nginx</p>
-            </div>
-            <div>
-              <h5>Working methods</h5>
-              <p>UML design, Git and GitHub, agile teamwork with user stories and sprints</p>
-            </div>
-          </div>
-          <ul class="tags tools" aria-label="Tools I use"><li><i class="ico" style="--i:url(assets/logos/python.svg)"></i>Python</li><li><i class="ico" style="--i:url(assets/logos/git.svg)"></i>Git</li><li><i class="ico" style="--i:url(assets/logos/github.svg)"></i>GitHub</li><li><i class="ico" style="--i:url(assets/logos/docker.svg)"></i>Docker</li><li><i class="ico" style="--i:url(assets/logos/wireguard.svg)"></i>WireGuard</li><li><i class="ico" style="--i:url(assets/logos/nginx.svg)"></i>Nginx</li></ul>
-        </section>
-      </section>
-
-      <!-- ENGINEERING COURSES -->
-      <section class="panel" role="tabpanel" id="p-courses" aria-labelledby="t-courses" tabindex="0">
-        <h2>Engineering Courses</h2>
-        <p class="lead">The courses and projects I have followed at ENSEEIHT, semester by semester. I update this page after each semester.</p>
-        <div class="school">
-          <img src="assets/logos/toulouse-inp-n7.png" alt="Toulouse INP – ENSEEIHT" width="331" height="120">
-          <span class="meta">ENSEEIHT, école d’ingénieurs de Toulouse INP</span>
+    <!-- ===== Projects ===== -->
+    <section class="sec alt" id="projects">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Selected work</p>
+          <h2>Projects</h2>
+          <p>Hands-on projects in networking and software engineering, from virtual infrastructures to object-oriented game design.</p>
         </div>
 
-        <div class="sems">
-          <section class="sem">
-            <div class="sem-head">
+        <div class="proj-grid">
+          <article class="card proj featured reveal">
+            <div>
+              <span class="pill">Featured project</span>
+              <p class="when">Autumn 2026 · Personal project, with Achraf Talhaoui</p>
+              <h3>Multi-site virtual network</h3>
+              <p>Two company sites reached through a simulated provider with eBGP, linked by an encrypted WireGuard tunnel, with DHCP, DNS, NAT and a firewall. Fully deployed and tested by scripts — 37 automated checks, all passing.</p>
+              <ul class="tags"><li><i class="ico" style="--i:url(assets/logos/docker.svg)"></i>Docker</li><li>Containerlab</li><li>FRRouting</li><li><i class="ico" style="--i:url(assets/logos/wireguard.svg)"></i>WireGuard</li><li>nftables</li></ul>
+              <a class="more" href="#project-network">Read the case study →</a>
+            </div>
+            <div class="fig-frame">
+              <svg class="topo" viewBox="0 0 600 360" role="img" aria-labelledby="hero-t hero-d">
+                <title id="hero-t">Architecture of the multi-site virtual network</title>
+                <desc id="hero-d">Site A and site B each have a router, a clients network and a servers network. The two routers reach each other through a simulated internet provider using eBGP, and a WireGuard tunnel links them directly.</desc>
+                <rect class="site" x="8" y="78" width="188" height="272" rx="10"/>
+                <rect class="site" x="404" y="78" width="188" height="272" rx="10"/>
+                <text class="t-site" x="22" y="100">Site A</text>
+                <text class="t-site" x="578" y="100" text-anchor="end">Site B</text>
+                <line class="link" x1="170" y1="146" x2="232" y2="146"/>
+                <line class="link" x1="368" y1="146" x2="430" y2="146"/>
+                <text class="t-m halo" x="201" y="168" text-anchor="middle">eBGP</text>
+                <text class="t-m halo" x="399" y="168" text-anchor="middle">eBGP</text>
+                <rect class="router" x="34" y="118" width="136" height="56" rx="8"/>
+                <text class="t-h" x="102" y="142" text-anchor="middle">R1</text>
+                <text class="t-s" x="102" y="160" text-anchor="middle">AS 65001</text>
+                <rect class="isp" x="232" y="118" width="136" height="56" rx="8"/>
+                <text class="t-h" x="300" y="142" text-anchor="middle">R-ISP</text>
+                <text class="t-s" x="300" y="160" text-anchor="middle">AS 65000, provider</text>
+                <rect class="router" x="430" y="118" width="136" height="56" rx="8"/>
+                <text class="t-h" x="498" y="142" text-anchor="middle">R2</text>
+                <text class="t-s" x="498" y="160" text-anchor="middle">AS 65002</text>
+                <path class="conn" d="M102 174 V198 M57 198 H147 M57 198 V222 M147 198 V222"/>
+                <path class="conn" d="M498 174 V198 M453 198 H543 M453 198 V222 M543 198 V222"/>
+                <rect class="lan" x="16" y="222" width="82" height="66" rx="6"/>
+                <text class="t-n" x="57" y="242" text-anchor="middle">Clients</text>
+                <text class="t-m" x="57" y="258" text-anchor="middle">10.1.10.0/24</text>
+                <text class="t-m" x="57" y="274" text-anchor="middle">PC1 (DHCP)</text>
+                <rect class="lan" x="106" y="222" width="82" height="66" rx="6"/>
+                <text class="t-n" x="147" y="242" text-anchor="middle">Servers</text>
+                <text class="t-m" x="147" y="258" text-anchor="middle">10.1.20.0/24</text>
+                <text class="t-m" x="147" y="274" text-anchor="middle">DNS</text>
+                <rect class="lan" x="412" y="222" width="82" height="66" rx="6"/>
+                <text class="t-n" x="453" y="242" text-anchor="middle">Clients</text>
+                <text class="t-m" x="453" y="258" text-anchor="middle">10.2.10.0/24</text>
+                <text class="t-m" x="453" y="274" text-anchor="middle">PC2 (DHCP)</text>
+                <rect class="lan" x="502" y="222" width="82" height="66" rx="6"/>
+                <text class="t-n" x="543" y="242" text-anchor="middle">Servers</text>
+                <text class="t-m" x="543" y="258" text-anchor="middle">10.2.20.0/24</text>
+                <text class="t-m" x="543" y="274" text-anchor="middle">Web (Nginx)</text>
+                <text class="t-m" x="102" y="316" text-anchor="middle">R1 also runs DHCP, NAT and</text>
+                <text class="t-m" x="102" y="331" text-anchor="middle">a default-deny firewall</text>
+                <text class="t-m" x="498" y="316" text-anchor="middle">R2 also runs DHCP, NAT and</text>
+                <text class="t-m" x="498" y="331" text-anchor="middle">a default-deny firewall</text>
+                <text class="t-m" x="300" y="206" text-anchor="middle">Only the two /30 links</text>
+                <text class="t-m" x="300" y="221" text-anchor="middle">are announced to the</text>
+                <text class="t-m" x="300" y="236" text-anchor="middle">provider, never the LANs</text>
+                <path id="tunnel-path" class="tunnel" d="M102 118 V70 Q102 50 122 50 H478 Q498 50 498 70 V118"/>
+                <text class="t-tun" x="300" y="38" text-anchor="middle">WireGuard tunnel</text>
+                <circle id="tunnel-dot" class="dot" r="6" cx="102" cy="118" style="opacity:0"/>
+              </svg>
+            </div>
+          </article>
+
+          <article class="card proj reveal">
+            <p class="when">Semester 6 · Group project</p>
+            <h3>Gravity Bot</h3>
+            <p>A Java game in which the player moves a satellite from a point A to a point B. I worked in the core team, which wrote the model of the game following the MVC pattern.</p>
+            <ul class="tags"><li>Java</li><li>UML</li><li>GitHub Projects</li><li>Scrum</li></ul>
+            <a class="more" href="#project-gravity">Read the case study →</a>
+          </article>
+
+          <article class="card proj reveal">
+            <p class="when">Semester 6 · Individual project</p>
+            <h3>Simplified internet service provider</h3>
+            <p>Addressing plan, routing, customer boxes, web and DNS services and security for a small provider, built in a virtual lab.</p>
+            <ul class="tags"><li>YANE</li><li>Routing</li><li>DNS</li><li>DMZ</li></ul>
+            <a class="more" href="#project-isp">Read the case study →</a>
+          </article>
+
+          <article class="card proj reveal" style="background: var(--navy); border-color: var(--navy);">
+            <p class="when" style="color:#8ea3b6;">On GitHub</p>
+            <h3 style="color:#fff;">See the code</h3>
+            <p style="color:#b9c8d6;">The multi-site network project — topology, configurations, deployment script and automated tests — is public on GitHub.</p>
+            <a class="btn btn-primary btn-sm" style="align-self:flex-start;" href="https://github.com/samariyassine2006-rgb/Reseau-entreprise-virtualise" target="_blank" rel="noopener">Open repository</a>
+          </article>
+        </div>
+
+        <!-- Case studies -->
+        <div class="cases">
+          <article class="card case reveal" id="project-network">
+            <header class="case-head">
+              <div>
+                <h3>Multi-site virtual network</h3>
+                <p>Two company sites linked through a simulated internet provider, all running in containers and described by a single Containerlab topology file.</p>
+              </div>
+              <a class="btn btn-outline btn-sm" href="https://github.com/samariyassine2006-rgb/Reseau-entreprise-virtualise" target="_blank" rel="noopener">View on GitHub</a>
+            </header>
+            <div class="case-body">
+              <dl class="facts">
+                <dt>When</dt><dd>Autumn 2026</dd>
+                <dt>Context</dt><dd>Personal project</dd>
+                <dt>Team</dt><dd>With Achraf Talhaoui</dd>
+                <dt>Tools</dt><dd>Docker, Containerlab, FRRouting, WireGuard, nftables, dnsmasq, Nginx</dd>
+              </dl>
+              <div class="case-main">
+                <ul class="did">
+                  <li>The sites and the provider exchange routes with eBGP. The sites announce only the links needed to reach each other, never their own networks.</li>
+                  <li>A WireGuard tunnel carries the traffic between the sites. If the tunnel goes down, nothing falls back to an unencrypted path through the provider.</li>
+                  <li>Each site has separate client and server networks, DHCP, DNS, address translation (NAT) and a default-deny nftables firewall.</li>
+                  <li>One script deploys the whole lab. Automated tests then check the network, the services and two failure scenarios (a cut link to the provider and a cut tunnel): 37 checks, all passing in the last recorded run.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="card case reveal" id="project-gravity">
+            <header class="case-head">
+              <div>
+                <h3>Gravity Bot</h3>
+                <p>A Java game in which the player moves a satellite from a starting point A to a target point B across a map of obstacles. Our long project for the Object Technology course.</p>
+              </div>
+            </header>
+            <div class="case-body">
+              <dl class="facts">
+                <dt>When</dt><dd>Semester 6, 2025–2026</dd>
+                <dt>Course</dt><dd>Object Technology</dd>
+                <dt>Team</dt><dd>Group CD03, split into a core team and an interface team. I worked in the core team.</dd>
+                <dt>Tools</dt><dd>Java, UML, Git and GitHub Projects</dd>
+              </dl>
+              <div class="case-main">
+                <h4>Design</h4>
+                <p>The code is split into three packages that follow the MVC pattern: <strong>core</strong> for the models, <strong>interface</strong> for the view and the controllers, and <strong>utils</strong> for the shared classes. The core team wrote the model of the game, and we drew the UML class diagrams before writing the code.</p>
+                <ul class="did">
+                  <li>Every actor, the satellite (the projectile) and the obstacles, extends an abstract class that holds a position, an update step and a draw method based on Java’s <code>Graphics</code>.</li>
+                  <li>Obstacles carry a price and define what happens to the projectile on contact. Collisions go through an interface, with a rectangular and a circular implementation.</li>
+                  <li>A map holds the projectile, the obstacles, the initial position and speed, the target and the starting budget. Each player has a name and a budget.</li>
+                </ul>
+
+                <h4>Maps that are easy to extend</h4>
+                <p>Maps are plain text files: the starting position, the budget, the initial speed, the target, then one line per obstacle. A registry links each keyword (<code>MUR</code> for a wall, <code>SPHERE</code> for a circular obstacle) to the code that builds it, so adding a new type of obstacle means adding one entry.</p>
+                <pre class="code" tabindex="0">positionInitiale = 50.0 50.0
+budgetInitiale = 1000
+vitesseInitiale = 0.0 10.0
+ciblePosition = 700.0 500.0
+
+OBSTACLE = MUR 100.0 0.0 200.0 600.0
+OBSTACLE = SPHERE 50.0 300.0 15.0 0.0
+OBSTACLE = SPHERE 65.0 380.0 8.0 0.0
+...</pre>
+                <pre class="code" tabindex="0">private static final Map&lt;String, ObstacleCreation&gt; registre = Map.of(
+  "MUR", data -&gt; new ObstacleMur(data.position, data.fin),
+  "SPHERE", data -&gt; new ObstacleCirculaire(position, data.fin.getNorme())
+);</pre>
+
+                <h4>Collisions</h4>
+                <pre class="code" tabindex="0">public interface Collision {
+    boolean estEnCollision(Acteur acteur);
+}
+
+for (Obstacle obs : obstacles) {
+  if (obs.estDansObstacle(this.projectile)) {
+    obs.eventAction(this.projectile);
+  }
+}</pre>
+
+                <h4>Interface</h4>
+                <p>Together, the two teams delivered a main menu, a map selection screen, the game window and an editor mode. In the game, the player holds the mouse button to choose the direction, then launches the simulation. In the editor, obstacles are placed on a grid. Our main difficulties were redundant data between the editor and the model, and keeping the design easy to extend.</p>
+
+                <h4>Teamwork</h4>
+                <p>We organised the work with GitHub Projects: user stories, a prioritised backlog and assigned tasks. A Scrum master led a retrospective after each sprint. Planning the UML in advance and using GitHub Projects were our strengths. Merge conflicts and the visibility of everyone’s progress were the hard parts.</p>
+                <p>Use of AI: we declared it in our reports, for transparency. It helped with the graphical integration (Java Graphics) and the design of the menus.</p>
+              </div>
+            </div>
+            <div class="figs">
+              <figure>
+                <div class="fig-frame"><a href="assets/gravitybot-uml-core.png" target="_blank" rel="noopener"><img src="assets/gravitybot-uml-core.png" alt="UML class diagram of the core package: abstract classes Acteur and Obstacle, class Projectile, class Vecteur, and the Collision interface with a rectangular and a circular implementation." width="1840" height="944" loading="lazy"></a></div>
+                <figcaption>Core package, actors and collisions. Click to open at full size.</figcaption>
+              </figure>
+              <figure>
+                <div class="fig-frame"><a href="assets/gravitybot-uml-game.png" target="_blank" rel="noopener"><img src="assets/gravitybot-uml-game.png" alt="UML class diagram of the core package: Game, Map, ChargeurMap (map loader) and the abstract class Joueur (player)." width="1460" height="1062" loading="lazy"></a></div>
+                <figcaption>Core package, game, map and players.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="card case reveal" id="project-isp">
+            <header class="case-head">
+              <div>
+                <h3>Simplified internet service provider</h3>
+                <p>Design and configuration of a small provider and its services in a virtual environment, for the Networks course.</p>
+              </div>
+            </header>
+            <div class="case-body">
+              <dl class="facts">
+                <dt>When</dt><dd>Semester 6, 2025–2026</dd>
+                <dt>Course</dt><dd>Networks</dd>
+                <dt>Format</dt><dd>Individual project</dd>
+                <dt>Tools</dt><dd>YANE (the school’s virtualization tool, based on Docker and network namespaces) and VirtualBox</dd>
+              </dl>
+              <div class="case-main">
+                <ul class="did">
+                  <li>An addressing plan for the provider core: three networks linked by routers, with redundancy.</li>
+                  <li>Static routing first, then dynamic routing between the provider’s routers with RIP.</li>
+                  <li>Home routers (boxes) and private networks for two customers.</li>
+                  <li>The provider’s web and DNS services, placed in two DMZs.</li>
+                  <li>Security: protecting the provider’s web server and a customer’s private network, and giving one customer access to the other customer’s web server.</li>
+                </ul>
+                <p>The work was assessed in an intermediate review and in a final demonstration followed by an oral.</p>
+              </div>
+            </div>
+            <div class="figs one">
+              <figure>
+                <div class="fig-frame"><a href="assets/isp-yane-architecture.jpg" target="_blank" rel="noopener"><img src="assets/isp-yane-architecture.jpg" alt="Screenshot of the YANE creation tool showing the provider’s architecture: two customers with their boxes, the access router, the core routers and the provider’s web and DNS servers." width="1706" height="808" loading="lazy"></a></div>
+                <figcaption>The provider’s architecture built in YANE: two customers behind their boxes, the access router, the core routers, and the provider’s web and DNS servers.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Courses ===== -->
+    <section class="sec" id="courses">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Education</p>
+          <h2>Engineering Courses</h2>
+          <p>The courses I have followed at ENSEEIHT, semester by semester. This page is updated after each semester.</p>
+        </div>
+        <div class="card school reveal">
+          <img src="assets/logos/toulouse-inp-n7.png" alt="Toulouse INP – ENSEEIHT" width="331" height="120">
+          <span>ENSEEIHT, école d’ingénieurs de Toulouse INP — Digital Sciences, Systems and Networks Architecture track</span>
+        </div>
+
+        <div class="timeline">
+          <section class="card sem reveal">
+            <div>
               <h3>Semester 7</h3>
               <p class="meta">Second year, Systems and Networks Architecture track</p>
-              <p class="status">In progress</p>
+              <span class="status">In progress</span>
             </div>
             <div>
               <ul class="ue-list">
@@ -456,8 +634,8 @@
             </div>
           </section>
 
-          <section class="sem">
-            <div class="sem-head">
+          <section class="card sem reveal">
+            <div>
               <h3>Semester 6</h3>
               <p class="meta">First year</p>
             </div>
@@ -473,8 +651,8 @@
             </div>
           </section>
 
-          <section class="sem">
-            <div class="sem-head">
+          <section class="card sem reveal">
+            <div>
               <h3>Semester 5</h3>
               <p class="meta">First year, core foundations of digital sciences</p>
             </div>
@@ -490,396 +668,174 @@
             </div>
           </section>
         </div>
+      </div>
+    </section>
 
-        <div class="projects" id="projects">
-          <h3>Projects</h3>
-
-          <!-- Multi-site virtual network -->
-          <article class="case" id="project-network">
-            <header class="case-head">
-              <h4 class="case-title">Multi-site virtual network</h4>
-              <p class="case-sum">Two company sites linked through a simulated internet provider, all running in containers and described by a single Containerlab topology file.</p>
-            </header>
-            <dl class="facts">
-              <dt>When</dt><dd>Autumn 2026</dd>
-              <dt>Context</dt><dd>Personal project</dd>
-              <dt>Team</dt><dd>With Achraf Talhaoui</dd>
-              <dt>Tools</dt><dd>Docker, Containerlab, FRRouting, WireGuard, nftables, dnsmasq, Nginx</dd>
-            </dl>
-            <div class="case-main">
-              <ul class="did">
-                <li>The sites and the provider exchange routes with eBGP. The sites announce only the links needed to reach each other, never their own networks.</li>
-                <li>A WireGuard tunnel carries the traffic between the sites. If the tunnel goes down, nothing falls back to an unencrypted path through the provider.</li>
-                <li>Each site has separate client and server networks, DHCP, DNS, address translation (NAT) and a default-deny nftables firewall.</li>
-                <li>One script deploys the whole lab. Automated tests then check the network, the services and two failure scenarios (a cut link to the provider and a cut tunnel): 37 checks, all passing in the last recorded run.</li>
-              </ul>
-              <p><a href="https://github.com/samariyassine2006-rgb/Reseau-entreprise-virtualise" target="_blank" rel="noopener">View the project on GitHub</a></p>
-            </div>
-            <div class="case-figs">
-              <figure class="mid">
-                <div class="figure-frame"><svg class="topo" viewBox="0 0 600 360" role="img" aria-labelledby="case-t case-d">
-  <title id="case-t">Architecture of the multi-site virtual network</title>
-  <desc id="case-d">Site A and site B each have a router, a clients network and a servers network. The two routers reach each other through a simulated internet provider using eBGP, and a WireGuard tunnel links them directly.</desc>
-
-  <rect class="site" x="8" y="78" width="188" height="272" rx="10"/>
-  <rect class="site" x="404" y="78" width="188" height="272" rx="10"/>
-  <text class="t-site" x="22" y="100">Site A</text>
-  <text class="t-site" x="578" y="100" text-anchor="end">Site B</text>
-
-  <line class="link" x1="170" y1="146" x2="232" y2="146"/>
-  <line class="link" x1="368" y1="146" x2="430" y2="146"/>
-  <text class="t-m halo" x="201" y="168" text-anchor="middle">eBGP</text>
-  <text class="t-m halo" x="399" y="168" text-anchor="middle">eBGP</text>
-
-  <rect class="node router" x="34" y="118" width="136" height="56" rx="8"/>
-  <text class="t-h" x="102" y="142" text-anchor="middle">R1</text>
-  <text class="t-s" x="102" y="160" text-anchor="middle">AS 65001</text>
-  <rect class="node isp" x="232" y="118" width="136" height="56" rx="8"/>
-  <text class="t-h" x="300" y="142" text-anchor="middle">R-ISP</text>
-  <text class="t-s" x="300" y="160" text-anchor="middle">AS 65000, provider</text>
-  <rect class="node router" x="430" y="118" width="136" height="56" rx="8"/>
-  <text class="t-h" x="498" y="142" text-anchor="middle">R2</text>
-  <text class="t-s" x="498" y="160" text-anchor="middle">AS 65002</text>
-
-  <path class="conn" d="M102 174 V198 M57 198 H147 M57 198 V222 M147 198 V222"/>
-  <path class="conn" d="M498 174 V198 M453 198 H543 M453 198 V222 M543 198 V222"/>
-
-  <rect class="node lan" x="16" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="57" y="242" text-anchor="middle">Clients</text>
-  <text class="t-m" x="57" y="258" text-anchor="middle">10.1.10.0/24</text>
-  <text class="t-m" x="57" y="274" text-anchor="middle">PC1 (DHCP)</text>
-  <rect class="node lan" x="106" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="147" y="242" text-anchor="middle">Servers</text>
-  <text class="t-m" x="147" y="258" text-anchor="middle">10.1.20.0/24</text>
-  <text class="t-m" x="147" y="274" text-anchor="middle">DNS</text>
-
-  <rect class="node lan" x="412" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="453" y="242" text-anchor="middle">Clients</text>
-  <text class="t-m" x="453" y="258" text-anchor="middle">10.2.10.0/24</text>
-  <text class="t-m" x="453" y="274" text-anchor="middle">PC2 (DHCP)</text>
-  <rect class="node lan" x="502" y="222" width="82" height="66" rx="6"/>
-  <text class="t-n b" x="543" y="242" text-anchor="middle">Servers</text>
-  <text class="t-m" x="543" y="258" text-anchor="middle">10.2.20.0/24</text>
-  <text class="t-m" x="543" y="274" text-anchor="middle">Web (Nginx)</text>
-
-  <text class="t-m" x="102" y="316" text-anchor="middle">R1 also runs DHCP, NAT and</text>
-  <text class="t-m" x="102" y="331" text-anchor="middle">a default-deny firewall</text>
-  <text class="t-m" x="498" y="316" text-anchor="middle">R2 also runs DHCP, NAT and</text>
-  <text class="t-m" x="498" y="331" text-anchor="middle">a default-deny firewall</text>
-
-  <text class="t-m" x="300" y="206" text-anchor="middle">Only the two /30 links</text>
-  <text class="t-m" x="300" y="221" text-anchor="middle">are announced to the</text>
-  <text class="t-m" x="300" y="236" text-anchor="middle">provider, never the LANs</text>
-
-  <path class="tunnel" d="M102 118 V70 Q102 50 122 50 H478 Q498 50 498 70 V118"/>
-  <text class="t-tun" x="300" y="38" text-anchor="middle">WireGuard tunnel</text>
-  
-</svg></div>
-                <figcaption>Architecture of the final lab. The routers R1 and R2 announce only their provider links, so the networks of the two sites can be reached only through the tunnel.</figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <!-- Gravity Bot -->
-          <article class="case" id="project-gravity">
-            <header class="case-head">
-              <h4 class="case-title">Gravity Bot</h4>
-              <p class="case-sum">A Java game in which the player moves a satellite from a starting point A to a target point B across a map of obstacles. It was our long project for the Object Technology course.</p>
-            </header>
-            <dl class="facts">
-              <dt>When</dt><dd>Semester 6, 2025–2026</dd>
-              <dt>Course</dt><dd>Object Technology</dd>
-              <dt>Team</dt><dd>Group CD03, split into a core team and an interface team. I worked in the core team.</dd>
-              <dt>Tools</dt><dd>Java, UML, Git and GitHub Projects</dd>
-            </dl>
-            <div class="case-main">
-              <h5>Design</h5>
-              <p>The code is split into three packages that follow the MVC pattern: <strong>core</strong> for the models, <strong>interface</strong> for the view and the controllers, and <strong>utils</strong> for the shared classes. The core team wrote the model of the game, and we drew the UML class diagrams before writing the code.</p>
-              <ul class="did">
-                <li>Every actor, the satellite (the projectile) and the obstacles, extends an abstract class that holds a position, an update step and a draw method based on Java’s <code>Graphics</code>.</li>
-                <li>Obstacles carry a price and define what happens to the projectile on contact. Collisions go through an interface, with a rectangular and a circular implementation.</li>
-                <li>A map holds the projectile, the obstacles, the initial position and speed, the target and the starting budget. Each player has a name and a budget.</li>
-              </ul>
-
-              <h5>Maps that are easy to extend</h5>
-              <p>Maps are plain text files: the starting position, the budget, the initial speed, the target, then one line per obstacle. A registry links each keyword (<code>MUR</code> for a wall, <code>SPHERE</code> for a circular obstacle) to the code that builds it, so adding a new type of obstacle means adding one entry.</p>
-              <pre class="code" tabindex="0">positionInitiale = 50.0 50.0
-budgetInitiale = 1000
-vitesseInitiale = 0.0 10.0
-ciblePosition = 700.0 500.0
-
-OBSTACLE = MUR 100.0 0.0 200.0 600.0
-OBSTACLE = SPHERE 50.0 300.0 15.0 0.0
-OBSTACLE = SPHERE 65.0 380.0 8.0 0.0
-...</pre>
-              <pre class="code" tabindex="0">private static final Map&lt;String, ObstacleCreation&gt; registre = Map.of(
-  "MUR", data -&gt; new ObstacleMur(data.position, data.fin),
-  "SPHERE", data -&gt; new ObstacleCirculaire(position, data.fin.getNorme())
-);</pre>
-
-              <h5>Collisions</h5>
-              <pre class="code" tabindex="0">public interface Collision {
-    boolean estEnCollision(Acteur acteur);
-}
-
-for (Obstacle obs : obstacles) {
-  if (obs.estDansObstacle(this.projectile)) {
-    obs.eventAction(this.projectile);
-  }
-}</pre>
-
-              <h5>Interface</h5>
-              <p>Together, the two teams delivered a main menu, a map selection screen, the game window and an editor mode. In the game, the player holds the mouse button to choose the direction, then launches the simulation. In the editor, obstacles are placed on a grid. Our main difficulties were redundant data between the editor and the model, and keeping the design easy to extend.</p>
-
-              <h5>Teamwork</h5>
-              <p>We organised the work with GitHub Projects: user stories, a prioritised backlog and assigned tasks. A Scrum master led a retrospective after each sprint. Planning the UML in advance and using GitHub Projects were our strengths. Merge conflicts and the visibility of everyone’s progress were the hard parts.</p>
-              <p>Use of AI: we declared it in our reports, for transparency. It helped with the graphical integration (Java Graphics) and the design of the menus.</p>
-            </div>
-            <div class="case-figs">
-              <figure>
-                <div class="figure-frame">
-                  <a class="zoom" href="assets/gravitybot-uml-core.png" target="_blank" rel="noopener"><img src="assets/gravitybot-uml-core.png" alt="UML class diagram of the core package: abstract classes Acteur and Obstacle, class Projectile, class Vecteur, and the Collision interface with a rectangular and a circular implementation." width="1840" height="944" loading="lazy"></a>
-                </div>
-                <figcaption>Core package, actors and collisions. Select the image to open it at full size.</figcaption>
-              </figure>
-              <figure class="mid">
-                <div class="figure-frame">
-                  <a class="zoom" href="assets/gravitybot-uml-game.png" target="_blank" rel="noopener"><img src="assets/gravitybot-uml-game.png" alt="UML class diagram of the core package: Game, Map, ChargeurMap (map loader) and the abstract class Joueur (player)." width="1460" height="1062" loading="lazy"></a>
-                </div>
-                <figcaption>Core package, game, map and players.</figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <!-- Simplified ISP -->
-          <article class="case" id="project-isp">
-            <header class="case-head">
-              <h4 class="case-title">Simplified internet service provider</h4>
-              <p class="case-sum">Design and configuration of a small provider and its services in a virtual environment, for the Networks course.</p>
-            </header>
-            <dl class="facts">
-              <dt>When</dt><dd>Semester 6, 2025–2026</dd>
-              <dt>Course</dt><dd>Networks</dd>
-              <dt>Format</dt><dd>Individual project</dd>
-              <dt>Tools</dt><dd>YANE (the school’s virtualization tool, based on Docker and network namespaces) and VirtualBox</dd>
-            </dl>
-            <div class="case-main">
-              <ul class="did">
-                <li>An addressing plan for the provider core: three networks linked by routers, with redundancy.</li>
-                <li>Static routing first, then dynamic routing between the provider’s routers with RIP.</li>
-                <li>Home routers (boxes) and private networks for two customers.</li>
-                <li>The provider’s web and DNS services, placed in two DMZs.</li>
-                <li>Security: protecting the provider’s web server and a customer’s private network, and giving one customer access to the other customer’s web server.</li>
-              </ul>
-              <p>The work was assessed in an intermediate review and in a final demonstration followed by an oral.</p>
-            </div>
-            <div class="case-figs">
-              <figure>
-                <div class="figure-frame">
-                  <a class="zoom" href="assets/isp-yane-architecture.jpg" target="_blank" rel="noopener"><img src="assets/isp-yane-architecture.jpg" alt="Screenshot of the YANE creation tool showing the provider’s architecture: two customers with their boxes, the access router, the core routers and the provider’s web and DNS servers." width="1706" height="808" loading="lazy"></a>
-                </div>
-                <figcaption>The provider’s architecture built in YANE: two customers behind their boxes, the access router, the core routers, and the provider’s web and DNS servers.</figcaption>
-              </figure>
-            </div>
-          </article>
+    <!-- ===== Mobility ===== -->
+    <section class="sec alt" id="mobility">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Going global</p>
+          <h2>International Mobility</h2>
+          <p>International experiences are essential for my academic and personal growth. I aspire to study or work abroad to discover new cultures, develop adaptability, and build a global perspective on technology and innovation.</p>
         </div>
-      </section>
-
-      <!-- INTERNATIONAL MOBILITY -->
-      <section class="panel" role="tabpanel" id="p-mobility" aria-labelledby="t-mobility" tabindex="0">
-        <h2>International Mobility</h2>
-        <p class="lead">International experiences are essential for my academic and personal growth. I aspire to study or work abroad to discover new cultures, develop adaptability, and build a global perspective on technology and innovation.</p>
-        <div class="cols-3">
-          <article>
+        <div class="grid-3">
+          <article class="card info reveal">
+            <div class="flag" aria-hidden="true">🇯🇵</div>
             <h3>Japan</h3>
             <p>Japan fascinates me with its strong balance between tradition and technology. I admire how Japanese culture values discipline, teamwork, and innovation, all essential qualities for an engineer. Studying in Japan would also allow me to experience advanced robotics, AI, and digital systems firsthand, while exploring a rich and respectful culture.</p>
           </article>
-          <article>
+          <article class="card info reveal">
+            <div class="flag" aria-hidden="true">🇺🇸</div>
             <h3>United States</h3>
             <p>The USA represents the heart of global innovation and entrepreneurship. I would love to study or work there to develop my skills in cutting-edge technologies such as artificial intelligence and data science, and to experience a fast-paced, ambitious environment that pushes me to grow as both a student and a professional.</p>
           </article>
-          <article>
+          <article class="card info reveal">
+            <div class="flag" aria-hidden="true">🇨🇦</div>
             <h3>Canada</h3>
             <p>Canada attracts me for its cultural diversity, inclusive society, and excellent universities in the field of digital sciences. I appreciate the strong emphasis on collaboration and research there, which matches my vision of innovation through teamwork and open-mindedness.</p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SUSTAINABILITY & CIVIC ENGAGEMENT -->
-      <section class="panel" role="tabpanel" id="p-civic" aria-labelledby="t-civic" tabindex="0">
-        <h2>Sustainability &amp; Civic Engagement</h2>
-        <p class="lead">I participate in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
-        <div class="entries">
-          <article class="entry">
-            <h3>Integration week: the “King Kong” theatre play</h3>
+    <!-- ===== Civic ===== -->
+    <section class="sec" id="civic">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Community</p>
+          <h2>Sustainability &amp; Civic Engagement</h2>
+          <p>I take part in environmental and social initiatives, such as awareness campaigns and volunteer activities at ENSEEIHT.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card info reveal">
+            <p class="date">Integration week</p>
+            <h3>The “King Kong” theatre play</h3>
             <p>During the integration week, I attended the theatre play “King Kong”, which raised awareness about sexual and sexist harassment. It was a powerful and emotional performance that highlighted the importance of respect, equality, and solidarity within our community.</p>
           </article>
-          <article class="entry">
-            <h3>“L’Hiver Sera Chaud”, 7 October 2025</h3>
-            <p>On 7 October 2025, I attended the event “L’Hiver Sera Chaud”, which promotes social engagement, inclusion, and environmental awareness. It was an inspiring opportunity to connect with motivated students and organizations working towards a fairer and more sustainable world.</p>
+          <article class="card info reveal">
+            <p class="date">7 October 2025</p>
+            <h3>“L’Hiver Sera Chaud”</h3>
+            <p>I attended the event “L’Hiver Sera Chaud”, which promotes social engagement, inclusion, and environmental awareness. It was an inspiring opportunity to connect with motivated students and organizations working towards a fairer and more sustainable world.</p>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SPORT & OTHER ACTIVITIES -->
-      <section class="panel" role="tabpanel" id="p-sport" aria-labelledby="t-sport" tabindex="0">
-        <h2>Sport &amp; Other Activities</h2>
-        <p class="lead">Sports and hobbies are an essential part of my student life. They help me stay healthy, focused, and creative.</p>
-        <div class="sports">
-          <article class="sport">
+    <!-- ===== Sport & activities ===== -->
+    <section class="sec alt" id="activities">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Beyond the classroom</p>
+          <h2>Sport &amp; Other Activities</h2>
+          <p>Sports and hobbies are an essential part of my student life. They help me stay healthy, focused, and creative.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card sport reveal">
             <img src="football.jpeg" alt="Playing football" width="304" height="166" loading="lazy">
-            <div>
-              <h3>Football</h3>
-              <p>I love playing football with friends and classmates. It’s a great way to stay active, improve teamwork, and release stress after classes.</p>
-            </div>
+            <div><h3>Football</h3><p>I love playing football with friends and classmates. It’s a great way to stay active, improve teamwork, and release stress after classes.</p></div>
           </article>
-          <article class="sport">
+          <article class="card sport reveal">
             <img src="assets/badminton.jpg" alt="Two badminton rackets and a shuttlecock on a court" width="612" height="408" loading="lazy">
-            <div>
-              <h3>Badminton</h3>
-              <p>I also play badminton. It asks for quick footwork, anticipation and precision, and it is another way to stay active with friends.</p>
-            </div>
+            <div><h3>Badminton</h3><p>Badminton asks for quick footwork, anticipation and precision, and it is another way to stay active with friends.</p></div>
           </article>
-          <article class="sport">
+          <article class="card sport reveal">
             <img src="ping%20pongg.jpeg" alt="Playing ping pong" width="275" height="183" loading="lazy">
-            <div>
-              <h3>Ping pong</h3>
-              <p>Ping pong helps me improve focus, reflexes, and precision. I often play during breaks at school with classmates.</p>
-            </div>
+            <div><h3>Ping pong</h3><p>Ping pong helps me improve focus, reflexes, and precision. I often play during breaks at school with classmates.</p></div>
           </article>
-          <article class="sport">
+          <article class="card sport reveal">
             <img src="cooking.jpeg" alt="Cooking" width="275" height="183" loading="lazy">
-            <div>
-              <h3>Cooking</h3>
-              <p>Cooking is one of my favorite hobbies outside of studies. It allows me to be creative and share good moments with friends.</p>
-            </div>
+            <div><h3>Cooking</h3><p>Cooking is one of my favourite hobbies outside of studies. It allows me to be creative and share good moments with friends.</p></div>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- CAREER DEVELOPMENT -->
-      <section class="panel" role="tabpanel" id="p-career" aria-labelledby="t-career" tabindex="0">
-        <h2>Career Development</h2>
-        <p class="lead">My career goal is to become a digital systems engineer, contributing to innovation in technology, AI, or embedded systems.</p>
-        <ul class="downloads">
-          <li>
-            <a class="btn btn-primary" href="Yassine_Samari_CV_EN.pdf" target="_blank" rel="noopener">Download the English CV</a>
-            <p class="meta">Full English version of my CV (PDF).</p>
-          </li>
-          <li>
-            <a class="btn btn-primary" href="Yassine_Samari_CV_FR.pdf" target="_blank" rel="noopener">Télécharger le CV en français</a>
-            <p class="meta">Version complète de mon CV en français (PDF).</p>
-          </li>
-        </ul>
-        <div class="contact">
-          <h3>Contact</h3>
-          <ul>
-            <li><span>Email</span><a href="mailto:samari.yassine@etu.inp-n7.fr"><i class="ico" style="--i:url(assets/logos/mail.svg)"></i>samari.yassine@etu.inp-n7.fr</a></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/yassine-samari/" target="_blank" rel="noopener"><img class="ico-c" src="assets/logos/linkedin.svg" alt="" width="20" height="20">Yassine Samari</a></li>
-            <li><span>GitHub</span><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener"><i class="ico" style="--i:url(assets/logos/github.svg)"></i>samariyassine2006-rgb</a></li>
+    <!-- ===== Career ===== -->
+    <section class="sec" id="career">
+      <div class="wrap">
+        <div class="contact-band reveal">
+          <div>
+            <p class="kicker">Career Development</p>
+            <h2>Let’s work together.</h2>
+            <p>My career goal is to become a digital systems engineer, contributing to innovation in technology, networks, AI or embedded systems. Feel free to download my CV or reach out.</p>
+            <div class="cv-btns">
+              <a class="btn btn-primary" href="Yassine_Samari_CV_EN.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>CV — English</a>
+              <a class="btn btn-ghost" href="Yassine_Samari_CV_FR.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>CV — Français</a>
+            </div>
+          </div>
+          <ul class="contact-list">
+            <li><a href="mailto:samari.yassine@etu.inp-n7.fr"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><div><small>Email</small><span>samari.yassine@etu.inp-n7.fr</span></div></a></li>
+            <li><a href="https://www.linkedin.com/in/yassine-samari/" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></i><div><small>LinkedIn</small><span>Yassine Samari</span></div></a></li>
+            <li><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg></i><div><small>GitHub</small><span>samariyassine2006-rgb</span></div></a></li>
           </ul>
         </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="foot">
+  <footer>
     <div class="wrap">
-      <ul>
-        <li><a href="mailto:samari.yassine@etu.inp-n7.fr"><i class="ico" style="--i:url(assets/logos/mail.svg)"></i>samari.yassine@etu.inp-n7.fr</a></li>
-        <li><a href="https://www.linkedin.com/in/yassine-samari/" target="_blank" rel="noopener"><img class="ico-c" src="assets/logos/linkedin.svg" alt="" width="20" height="20">LinkedIn</a></li>
-        <li><a href="https://github.com/samariyassine2006-rgb" target="_blank" rel="noopener"><i class="ico" style="--i:url(assets/logos/github.svg)"></i>GitHub</a></li>
-      </ul>
+      <span>© 2026 Yassine Samari · ENSEEIHT, Toulouse INP</span>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
   <script>
     (function () {
-      var root = document.documentElement;
-      root.classList.add('js');
+      document.documentElement.classList.add('js');
 
-      var bar = document.getElementById('bar');
-      var list = document.querySelector('.tablist');
-      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-      var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
-
-      function setBarHeight() { root.style.setProperty('--bar-h', bar.offsetHeight + 'px'); }
-
-      function centerTab(tab) {
-        list.scrollLeft = tab.offsetLeft - (list.clientWidth - tab.offsetWidth) / 2;
-      }
-
-      function show(index, opts) {
-        opts = opts || {};
-        tabs.forEach(function (tab, i) {
-          var on = i === index;
-          tab.setAttribute('aria-selected', on ? 'true' : 'false');
-          tab.tabIndex = on ? 0 : -1;
-          panels[i].hidden = !on;
-        });
-        centerTab(tabs[index]);
-        if (opts.focus) tabs[index].focus();
-        if (opts.top) window.scrollTo(0, 0);
-        if (opts.hash) history.replaceState(null, '', '#' + tabs[index].id.slice(2));
-      }
-
-      function fromHash() {
-        var id = decodeURIComponent(location.hash.slice(1));
-        if (!id) return false;
-        var tabIndex = tabs.findIndex(function (t) { return t.id === 't-' + id; });
-        if (tabIndex > -1) { show(tabIndex, { top: true }); return true; }
-        var target = document.getElementById(id);
-        var panel = target && target.closest('[role="tabpanel"]');
-        if (panel) {
-          show(panels.indexOf(panel));
-          target.scrollIntoView();
-          return true;
-        }
-        return false;
-      }
-
-      tabs.forEach(function (tab, i) {
-        tab.addEventListener('click', function () { show(i, { top: true, hash: true }); });
-        tab.addEventListener('keydown', function (e) {
-          var next = null;
-          if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
-          else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
-          else if (e.key === 'Home') next = 0;
-          else if (e.key === 'End') next = tabs.length - 1;
-          if (next !== null) { e.preventDefault(); show(next, { focus: true, hash: true }); }
-        });
+      /* Mobile menu */
+      var nav = document.getElementById('nav');
+      var btn = document.getElementById('menu-btn');
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('#links a').forEach(function (a) {
+        a.addEventListener('click', function () { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
       });
 
-      window.addEventListener('hashchange', fromHash);
-      window.addEventListener('resize', setBarHeight);
-      setBarHeight();
-      if (!fromHash()) show(0);
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(setBarHeight);
+      /* Reveal on scroll + active nav link */
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-      /* One moving packet along the tunnel of the hero diagram (skipped when motion is reduced). */
+        var links = {};
+        document.querySelectorAll('#links a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && links[e.target.id]) {
+              Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); });
+              links[e.target.id].classList.add('active');
+            }
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+      }
+
+      /* Packet moving along the WireGuard tunnel */
       var path = document.getElementById('tunnel-path');
       var dot = document.getElementById('tunnel-dot');
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (path && dot && !reduce) {
-        var len = path.getTotalLength();
-        var travel = 5200, rest = 1100, start = null;
+        var len = path.getTotalLength(), travel = 5200, rest = 1100, start = null;
         var frame = function (ts) {
           if (start === null) start = ts;
           var t = (ts - start) % (travel + rest);
-          if (t < travel && !panels[0].hidden && !document.hidden) {
-            var x = t / travel;
-            var eased = 0.5 - Math.cos(Math.PI * x) / 2;
-            var p = path.getPointAtLength(len * eased);
-            dot.setAttribute('cx', p.x);
-            dot.setAttribute('cy', p.y);
-            dot.style.opacity = 1;
-          } else {
-            dot.style.opacity = 0;
-          }
-          window.requestAnimationFrame(frame);
+          if (t < travel && !document.hidden) {
+            var p = path.getPointAtLength(len * (0.5 - Math.cos(Math.PI * t / travel) / 2));
+            dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y); dot.style.opacity = 1;
+          } else { dot.style.opacity = 0; }
+          requestAnimationFrame(frame);
         };
-        window.requestAnimationFrame(frame);
+        requestAnimationFrame(frame);
       }
     })();
   </script>
